@@ -6,5 +6,6 @@ export const MainLayout: FC<{}> = ({ children }) => (
   <StyledContainer>
     <Navigation />
     {children}
+    <div>Footer</div>
   </StyledContainer>
 );

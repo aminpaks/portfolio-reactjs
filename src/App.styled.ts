@@ -1,6 +1,12 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+  html, body {
+    display: flex;
+    flex: 1 0 100%;
+    flex-direction: column;
+    min-height: 100%;
+  }
   body {
     margin: 0;
     padding: 0;
@@ -16,6 +22,10 @@ export const GlobalStyles = createGlobalStyle`
 
   a {
     color: #61dafb;
+  }
+
+  #root {
+    flex: 1 0 auto;
   }
 `;
 
