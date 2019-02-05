@@ -25,7 +25,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   #root {
+    display: flex;
     flex: 1 0 auto;
+    flex-direction: column;
   }
 `;
 
