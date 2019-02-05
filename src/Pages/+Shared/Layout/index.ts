@@ -1,2 +1,2 @@
-export * from "./Main";
-export * from "./Main.styled";
+export * from './Main';
+export * from './Main.styled';
