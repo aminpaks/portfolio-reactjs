@@ -1,6 +1,5 @@
 import React from 'react';
 
-// TODO: Should be absolute path since outside of future lazy load HOME page
 import { MainLayout } from '../+Shared/Layout/Main';
 import { HeadTitle } from '../+Shared/HeadTitle';
 import { MainSection } from '../+Shared/Layout/Section';
@@ -16,3 +15,5 @@ export const HomePage = () => (
     </MainLayout>
   </>
 );
+
+export default HomePage;

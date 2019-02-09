@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React, { Suspense, Component } from 'react';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { GlobalStyles } from './App.styled';
-import { HomePage } from './Pages';
+import { HomePageRoute } from './Pages';
 
 class App extends Component {
   render() {
@@ -9,7 +9,11 @@ class App extends Component {
       <>
         <GlobalStyles />
         <BrowserRouter>
-          <Route exact path="/" component={HomePage} />
+          <Suspense fallback={<div>Loading</div>}>
+            <Switch>
+              <HomePageRoute />
+            </Switch>
+          </Suspense>
         </BrowserRouter>
       </>
     );
