@@ -6,5 +6,6 @@ export const Navigation: FC = () => (
   <StyledNavContainer>
     <Link to="/">Home</Link>
     <Link to="/about">About</Link>
+    <Link to="/styleguide">Styleguide</Link>
   </StyledNavContainer>
 );
