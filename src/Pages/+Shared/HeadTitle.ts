@@ -1,19 +1,23 @@
-import { Component } from 'react';
+import { Component, useEffect, FC } from 'react';
 
 interface HeadTitleProps {
   suffix?: string;
   title?: string;
 }
 
-export class HeadTitle extends Component<HeadTitleProps> {
-  componentDidMount() {
-    const { title, suffix = 'DMotivation' } = this.props;
+export const HeadTitle: FC<HeadTitleProps> = ({ suffix = 'DMotivation', title }) => {
+  useEffect(() => {
     const head: HTMLTitleElement | null = document.querySelector('head title');
     if (head) {
       head.textContent = title ? `${title} - ${suffix}` : suffix;
     }
-  }
-  render() {
-    return null;
-  }
-}
+    // Unmount
+    return () => {
+      if (head) {
+        // Next mounted HeadTitle will replace this
+        head.textContent = 'Loading...';
+      }
+    };
+  }, []);
+  return null;
+};
