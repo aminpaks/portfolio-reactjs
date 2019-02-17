@@ -1,3 +1,3 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-export const HomePageSectionMain = () => <div>Mobile</div>;
+export const HomePageSectionMain: FC<{}> = ({ children }) => <div>main section</div>;

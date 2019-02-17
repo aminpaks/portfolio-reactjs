@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { StyledNavContainer, StyledNavLogoContainer, StyledNavLinksContainer } from './Nav.styled';
+import { StyledHeader, StyledNavLogoContainer, StyledNavLinksContainer } from './Header.styled';
 import { DefaultNavLinks } from './Links';
 
-export interface NavigationProps {
+export interface HeaderProps {
   logo?: React.ReactElement<any>;
 }
 
@@ -10,14 +10,14 @@ const DefaultLogo = () => (
   <img src="https://brandongaille.com/wp-content/uploads/2013/07/Dell-Company-Logo.jpg" />
 );
 
-export const Navigation: FC<NavigationProps> = ({
+export const Header: FC<HeaderProps> = ({
   logo = <DefaultLogo />,
   children = <DefaultNavLinks />,
 }) => (
-  <StyledNavContainer>
+  <StyledHeader>
     <div>
       {logo != null && <StyledNavLogoContainer>{logo}</StyledNavLogoContainer>}
       <StyledNavLinksContainer>{children}</StyledNavLinksContainer>
     </div>
-  </StyledNavContainer>
+  </StyledHeader>
 );

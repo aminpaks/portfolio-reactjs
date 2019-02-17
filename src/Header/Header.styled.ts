@@ -44,19 +44,20 @@ export const StyledNavLinksContainer = styled.div`
   }
 `;
 
-export const StyledNavContainer = styled.nav`
+export const StyledHeader = styled.div`
   top: 0;
   left: 0;
   right: 0;
   display: block;
   position: fixed;
   z-index: 1000;
+  background: #fff;
+  padding-left: 6%;
 
   > div {
     height: 74px; /* header inner height */
     display: flex;
     position: relative;
-    margin-left: 5%;
     padding-left: 14%;
 
     background-color: ${tempPrimaryColor};
