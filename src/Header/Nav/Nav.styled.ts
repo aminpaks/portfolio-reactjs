@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import colorUtils from 'color';
 
 const tempPrimaryColor = '#5f67df';
+const navLinksSeparatorWidth = '1px';
 
 export const StyledNavLogoContainer = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ export const StyledNavLinksContainer = styled.div`
     color: #fff;
     flex: 0 0 auto;
     padding: 0 0.6em;
-    margin-left: calc(1em + 1px);
+    margin-left: calc(1em + ${navLinksSeparatorWidth});
     margin-right: 1em;
     display: block;
     position: relative;
@@ -30,8 +31,8 @@ export const StyledNavLinksContainer = styled.div`
     &:not(:last-child) {
       &:after {
         top: 50%;
-        right: calc(-1em - 1px);
-        width: 1px;
+        right: calc(-1em - ${navLinksSeparatorWidth});
+        width: ${navLinksSeparatorWidth};
         height: 60%;
         display: block;
         position: absolute;
@@ -52,7 +53,7 @@ export const StyledNavContainer = styled.nav`
   z-index: 1000;
 
   > div {
-    height: 74px;
+    height: 74px; /* header inner height */
     display: flex;
     position: relative;
     margin-left: 5%;
