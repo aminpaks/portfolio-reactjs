@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { RouteChildrenProps } from 'react-router';
 import { ButtonRoute } from './Buttons';
 import { MainLayout, MainSection } from '../Pages/+Shared';
+import { GridSystemRoute } from './GridSystem';
 
 export const StyleGuide: FC<RouteChildrenProps> = props => {
   const { match, history, location } = props;
@@ -14,6 +15,7 @@ export const StyleGuide: FC<RouteChildrenProps> = props => {
     <MainLayout>
       <MainSection>
         <ButtonRoute {...props} />
+        <GridSystemRoute {...props} />
       </MainSection>
     </MainLayout>
   );
