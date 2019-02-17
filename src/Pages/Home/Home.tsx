@@ -1,8 +1,9 @@
 import React from 'react';
 
-import { MainLayout } from '../+Shared/Layout/Main';
+// LAyout should be absolute path
+import { MainLayout } from '../../Layout/Main';
+import { MainSection } from '../../Layout/Section';
 import { HeadTitle } from '../+Shared/HeadTitle';
-import { MainSection } from '../+Shared/Layout/Section';
 import { HomePageSectionMain } from './SectionMain';
 
 export const HomePage = () => (
