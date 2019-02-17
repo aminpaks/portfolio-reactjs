@@ -1,11 +1,23 @@
 import React, { FC } from 'react';
-import { Link } from 'react-router-dom';
-import { StyledNavContainer } from './Nav.styled';
+import { StyledNavContainer, StyledNavLogoContainer, StyledNavLinksContainer } from './Nav.styled';
+import { DefaultNavLinks } from './Links';
 
-export const Navigation: FC = () => (
+export interface NavigationProps {
+  logo?: React.ReactElement<any>;
+}
+
+const DefaultLogo = () => (
+  <img src="https://brandongaille.com/wp-content/uploads/2013/07/Dell-Company-Logo.jpg" />
+);
+
+export const Navigation: FC<NavigationProps> = ({
+  logo = <DefaultLogo />,
+  children = <DefaultNavLinks />,
+}) => (
   <StyledNavContainer>
-    <Link to="/">Home</Link>
-    <Link to="/about">About</Link>
-    <Link to="/styleguide">Styleguide</Link>
+    <div>
+      {logo != null && <StyledNavLogoContainer>{logo}</StyledNavLogoContainer>}
+      <StyledNavLinksContainer>{children}</StyledNavLinksContainer>
+    </div>
   </StyledNavContainer>
 );
