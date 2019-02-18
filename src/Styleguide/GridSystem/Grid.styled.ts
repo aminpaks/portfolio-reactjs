@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled from '../../Theme';
 import { StyledGridContainer, StyledGridColumnContainer } from '../../Pages/+Shared/Grid';
 
 export const StyledGridSystemContainer = styled.div`
+  --primaryColor: ${(props) => props.theme.colorSet.primary};
   margin: 4em;
 
   ${StyledGridContainer} {
