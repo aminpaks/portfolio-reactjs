@@ -47,3 +47,9 @@ export const darken = (color: string, ratio: number) =>
     .darken(ratio)
     .hex()
     .toString();
+
+export const fade = (color: string, ratio: number) =>
+  colorUtils(color)
+    .fade(ratio)
+    .hex()
+    .toString();

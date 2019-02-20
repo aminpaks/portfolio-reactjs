@@ -1,18 +1,7 @@
 import React, { useContext, FC } from 'react';
-import { ThemeContext, getForegroundColor, ColorSet, ThemeProvider } from '../../Theme';
+import { ThemeContext, getForegroundColor, ColorSet } from '../../Theme';
 import { Button, HeadTitle } from '../../Pages/+Shared';
-
-const ShouldBeDarkForeground: FC<{ backgroundColor?: string; colorSet?: ColorSet }> = ({
-  backgroundColor = '#fff',
-  colorSet,
-}) => {
-  const foregroundColor = getForegroundColor(backgroundColor, colorSet);
-  return (
-    <h4 style={{ fontWeight: 'normal', color: foregroundColor }}>
-      What color text should be on this background? <b>{foregroundColor}</b>
-    </h4>
-  );
-};
+import { StyledSectionContainer } from './Buttons.styled';
 
 export const Buttons = () => {
   // This is how you access the theme declaratively
@@ -21,17 +10,31 @@ export const Buttons = () => {
   return (
     <div>
       <HeadTitle title="Buttons" suffix="Styleguide" />
-      <div style={{ padding: '2em', backgroundColor: theme.colorSet.secondary }}>
-        <ShouldBeDarkForeground backgroundColor={theme.colorSet.secondary} />
-        <Button text="button default" />
-        <Button text="button primary" variant="primary" />
-        <Button text="button secondary" variant="secondary" />
-      </div>
-      <div style={{ padding: '2em' }}>
-        <ShouldBeDarkForeground colorSet={theme.colorSet} />
-        <Button text="button default outline" variant="default-outline" />
-        <Button text="button secondary" variant="secondary" />
-      </div>
+      <StyledSectionContainer>
+        <h3>Button Sizes</h3>
+        <Button text="Large size" size="large" />
+        <Button text="Default size" size="default" />
+        <Button text="Small size" size="small" />
+      </StyledSectionContainer>
+      <StyledSectionContainer>
+        <h3>Button Styles</h3>
+
+        <Button text="Default or Primary" variant="primary" />
+        <Button text="Secondary" variant="secondary" />
+        <Button text="Gray" variant="gray" />
+        <Button text="Outline" variant="primary-outline" />
+        <Button text="Light outline" variant="light-outline" />
+        <div
+          style={{
+            display: 'inline-block',
+            borderRadius: '1.8em',
+            backgroundColor: theme.colorSet.secondary,
+          }}
+        >
+          <Button text="Invert outline" variant="invert-outline" />
+          <Button text="Cast outline" variant="cast-outline" />
+        </div>
+      </StyledSectionContainer>
     </div>
   );
 };

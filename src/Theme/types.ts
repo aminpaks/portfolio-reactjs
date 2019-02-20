@@ -33,3 +33,7 @@ export interface Theme {
   colorSet: ColorSet;
   breakpoints: ViewBreakpoints;
 }
+
+export interface ThemeProps {
+  theme: Theme;
+}

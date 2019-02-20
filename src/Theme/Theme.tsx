@@ -5,8 +5,6 @@ import baseStyled, {
 } from 'styled-components';
 import { Theme } from './types';
 
-export { ThemeContext } from 'styled-components';
-
 export const defaultTheme: Theme = {
   colorSet: {
     text: '#262f3c',
