@@ -3,6 +3,7 @@ import { RouteChildrenProps } from 'react-router';
 import { ButtonRoute } from './Buttons';
 import { MainLayout, MainSection } from '../Layout';
 import { GridSystemRoute } from './GridSystem';
+import { TypographiesRoute } from './Typographies';
 
 export const StyleGuide: FC<RouteChildrenProps> = (props) => {
   const { match, history, location } = props;
@@ -16,6 +17,7 @@ export const StyleGuide: FC<RouteChildrenProps> = (props) => {
       <MainSection>
         <ButtonRoute {...props} />
         <GridSystemRoute {...props} />
+        <TypographiesRoute {...props} />
       </MainSection>
     </MainLayout>
   );
