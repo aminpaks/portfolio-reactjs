@@ -1,5 +1,5 @@
+import { ThemeProps, whiten, darken, fade, lighten } from 'src/Theme';
 import { PartialButtonProps } from './Button';
-import { ThemeProps, whiten, darken, fade, lighten } from '../../../Theme';
 type StyleState = 'normal' | 'hover' | 'focus';
 
 type ButtonAndThemeProps = PartialButtonProps & ThemeProps;

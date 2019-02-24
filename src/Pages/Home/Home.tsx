@@ -2,7 +2,7 @@ import React from 'react';
 
 // LAyout should be absolute path
 import { MainLayout } from '../../Layout/Main';
-import { HeadTitle } from '../+Shared/HeadTitle';
+import { HeadTitle } from 'src/+Shared';
 import { Card } from './Card/Card';
 import { MainSection } from './MainSection/SectionMain';
 import { ServicesSection } from './ServicesSection/ServicesSection';

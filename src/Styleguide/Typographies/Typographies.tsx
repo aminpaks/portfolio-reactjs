@@ -1,5 +1,6 @@
 import React from 'react';
-import { HeadTitle, Typography } from '../../Pages/+Shared';
+import { Typography } from 'src/UI-Kits';
+import { HeadTitle } from 'src/+Shared';
 import { StyledTypographyContainer } from './Typographies.styled';
 
 export const Typographies = () => (

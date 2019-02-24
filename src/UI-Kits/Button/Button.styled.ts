@@ -1,5 +1,5 @@
+import styled from 'src/Theme';
 import { keyframes } from 'styled-components';
-import styled from '../../../Theme';
 import { PartialButtonProps } from './Button';
 import {
   getTextColor,

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Grid, HeadTitle } from '../../Pages/+Shared';
+import { Grid } from 'src/UI-Kits';
+import { HeadTitle } from 'src/+Shared';
 import { StyledGridSystemContainer } from './Grid.styled';
 
 const lorem =

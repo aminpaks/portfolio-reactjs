@@ -1,5 +1,5 @@
-import styled, { getForegroundColor, lighten } from '../../Theme';
-import { StyledButton } from '../../Pages/+Shared';
+import styled, { getForegroundColor, lighten } from 'src/Theme';
+import { StyledButton } from 'src/UI-Kits';
 
 export const StyledSectionContainer = styled.div<{ background?: string }>`
   padding: 2em;

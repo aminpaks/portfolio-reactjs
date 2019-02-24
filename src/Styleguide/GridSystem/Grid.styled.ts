@@ -1,5 +1,5 @@
-import styled from '../../Theme';
-import { StyledGridContainer, StyledGridColumnContainer } from '../../Pages/+Shared/Grid';
+import styled from 'src/Theme';
+import { StyledGridContainer, StyledGridColumnContainer } from 'src/UI-Kits';
 
 export const StyledGridSystemContainer = styled.div`
   --primaryColor: ${(props) => props.theme.colorSet.primary};

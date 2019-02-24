@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { RouteChildrenProps } from 'react-router';
-import { ButtonRoute } from './Buttons';
+import { ButtonsRoute } from './Buttons';
 import { MainLayout } from '../Layout';
 import { GridSystemRoute } from './GridSystem';
 import { TypographiesRoute } from './Typographies';
@@ -14,7 +14,7 @@ export const StyleGuide: FC<RouteChildrenProps> = (props) => {
   }
   return (
     <MainLayout>
-      <ButtonRoute {...props} />
+      <ButtonsRoute {...props} />
       <GridSystemRoute {...props} />
       <TypographiesRoute {...props} />
     </MainLayout>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { getForegroundColor, darken } from '../../../Theme';
+import styled, { darken } from 'src/Theme';
 import { TypographyComponent, TypographyProps } from './Typography';
 import { getFontSize, getFontWeight, getMarginTop, getMarginBottom } from './Util';
 

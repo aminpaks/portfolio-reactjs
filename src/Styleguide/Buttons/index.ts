@@ -1,1 +1,1 @@
-export * from './Route';
+export { ButtonsRoute } from './Route';

@@ -1,6 +1,7 @@
 import React, { useContext, FC } from 'react';
-import { ThemeContext, getForegroundColor, ColorSet } from '../../Theme';
-import { Button, HeadTitle } from '../../Pages/+Shared';
+import { ThemeContext } from 'src/Theme';
+import { Button } from 'src/UI-Kits';
+import { HeadTitle } from 'src/+Shared';
 import { StyledSectionContainer } from './Buttons.styled';
 
 export const Buttons = () => {

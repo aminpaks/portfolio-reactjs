@@ -1,4 +1,4 @@
-import { Component, useEffect, FC } from 'react';
+import { useEffect, FC } from 'react';
 
 interface HeadTitleProps {
   suffix?: string;

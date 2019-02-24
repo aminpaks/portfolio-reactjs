@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'src/Theme';
 import { GridColumnProps } from './Column';
 
 const getPotentialSize = (sizes: (number | null)[]) => {
