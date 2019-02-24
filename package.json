@@ -22,10 +22,10 @@
     "mdx.macro": "^0.2.8"
   },
   "scripts": {
-    "start": "set \"NODE_PATH=./\" && react-scripts start",
-    "build": "set \"NODE_PATH=./\" && react-scripts build",
-    "test": "set \"NODE_PATH=./\" && react-scripts test",
-    "eject": "set \"NODE_PATH=./\" && react-scripts eject"
+    "start": "NODE_PATH=./ react-scripts start",
+    "build": "NODE_PATH=./ react-scripts build",
+    "test": "NODE_PATH=./ react-scripts test",
+    "eject": "NODE_PATH=./ react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
