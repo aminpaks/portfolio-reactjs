@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { RouteChildrenProps } from 'react-router';
 import { ButtonRoute } from './Buttons';
-import { MainLayout, MainSection } from '../Layout';
+import { MainLayout } from '../Layout';
 import { GridSystemRoute } from './GridSystem';
 import { TypographiesRoute } from './Typographies';
 
@@ -14,11 +14,9 @@ export const StyleGuide: FC<RouteChildrenProps> = (props) => {
   }
   return (
     <MainLayout>
-      <MainSection>
-        <ButtonRoute {...props} />
-        <GridSystemRoute {...props} />
-        <TypographiesRoute {...props} />
-      </MainSection>
+      <ButtonRoute {...props} />
+      <GridSystemRoute {...props} />
+      <TypographiesRoute {...props} />
     </MainLayout>
   );
 };

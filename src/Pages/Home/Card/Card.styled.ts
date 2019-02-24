@@ -7,6 +7,6 @@ const getBackgroundColor = () => (props: PartialCardProps) => {
 
 export const StyledCard = styled.div<PartialCardProps>`
   height: 500px;
-  background: ${getBackgroundColor()}
+  border-bottom: 1px solid ${getBackgroundColor()};
   padding: 5px;
 `;

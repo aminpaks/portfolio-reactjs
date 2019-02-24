@@ -1,8 +1,33 @@
 import styled from 'styled-components';
 import colorUtils from 'color';
+import { mediaQuery } from 'src/Device';
 
 const tempPrimaryColor = '#5f67df';
 const navLinksSeparatorWidth = '1px';
+
+export const StyledHeader = styled.div`
+  top: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  position: fixed;
+  z-index: 1000;
+
+  section > div {
+    height: 74px; /* header inner height */
+    display: flex;
+    position: relative;
+    padding-left: 14%;
+
+    background: ${(props) => props.theme.colorSet.secondary};
+    border-bottom: 1px solid
+      ${(props) =>
+        colorUtils(props.theme.colorSet.secondary)
+          .whiten(0.5)
+          .hex()
+          .toString()};
+  }
+`;
 
 export const StyledNavLogoContainer = styled.div`
   display: flex;
@@ -20,7 +45,7 @@ export const StyledNavLinksContainer = styled.div`
   margin-left: 1em;
 
   a {
-    color: #fff;
+    color: ${(props) => props.theme.colorSet.textInverted};
     flex: 0 0 auto;
     padding: 0 0.6em;
     margin-left: calc(1em + ${navLinksSeparatorWidth});
@@ -41,30 +66,5 @@ export const StyledNavLinksContainer = styled.div`
         background-color: #ddd;
       }
     }
-  }
-`;
-
-export const StyledHeader = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  position: fixed;
-  z-index: 1000;
-  background: #fff;
-  padding-left: 6%;
-
-  > div {
-    height: 74px; /* header inner height */
-    display: flex;
-    position: relative;
-    padding-left: 14%;
-
-    background-color: ${tempPrimaryColor};
-    border-bottom: 1px solid
-      ${colorUtils(tempPrimaryColor)
-        .whiten(0.5)
-        .hex()
-        .toString()};
   }
 `;

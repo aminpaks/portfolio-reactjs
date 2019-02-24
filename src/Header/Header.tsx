@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { StyledHeader, StyledNavLogoContainer, StyledNavLinksContainer } from './Header.styled';
 import { DefaultNavLinks } from './Links';
+import { Section } from 'src/+Shared/Section';
 
 export interface HeaderProps {
   logo?: React.ReactElement<any>;
@@ -15,9 +16,11 @@ export const Header: FC<HeaderProps> = ({
   children = <DefaultNavLinks />,
 }) => (
   <StyledHeader>
-    <div>
-      {logo != null && <StyledNavLogoContainer>{logo}</StyledNavLogoContainer>}
-      <StyledNavLinksContainer>{children}</StyledNavLinksContainer>
-    </div>
+    <Section variant="left-curved">
+      <div>
+        {logo != null && <StyledNavLogoContainer>{logo}</StyledNavLogoContainer>}
+        <StyledNavLinksContainer>{children}</StyledNavLinksContainer>
+      </div>
+    </Section>
   </StyledHeader>
 );
