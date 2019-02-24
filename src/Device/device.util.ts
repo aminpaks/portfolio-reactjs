@@ -1,4 +1,4 @@
-import { breakpoints } from '.';
+import { breakpoints } from './breakpoints';
 
 export const mediaQuery = {
   phoneOnly: () => {
