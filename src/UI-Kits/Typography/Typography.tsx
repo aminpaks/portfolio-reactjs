@@ -1,11 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, CSSProperties } from 'react';
 
 export type TypographyVariant = 'title' | 'headline' | 'subheading' | 'body';
+export type TypographyColorTheme = 'primary' | 'inverted';
 
 export interface TypographyProps {
   component?: 'h2' | 'h3';
   variant: TypographyVariant;
+  colorTheme?: TypographyColorTheme;
   text?: string;
+  style?: CSSProperties;
 }
 
 const getComponentType = (variant: TypographyVariant) => {

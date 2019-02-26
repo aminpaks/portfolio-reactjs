@@ -1,0 +1,1 @@
+export { PanelsRoute } from './Route';

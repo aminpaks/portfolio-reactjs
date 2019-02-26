@@ -1,5 +1,4 @@
 import colorUtils from 'color';
-import { ColorSet } from './types';
 
 export const getPerceivedBrightness = (color: string) => {
   // Calculate the perceived brightness of a color
@@ -48,8 +47,8 @@ export const darken = (color: string, ratio: number) =>
     .hex()
     .toString();
 
-export const fade = (color: string, ratio: number) =>
+export const fade = (color: string, opacity: number) =>
   colorUtils(color)
-    .fade(ratio)
-    .hex()
+    .fade(1 - opacity)
+    .rgb()
     .toString();

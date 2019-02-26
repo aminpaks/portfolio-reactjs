@@ -37,3 +37,5 @@ export interface Theme {
 export interface ThemeProps {
   theme: Theme;
 }
+
+export type WithThemeProps<T = {}> = T & ThemeProps;

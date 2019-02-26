@@ -1,4 +1,18 @@
+import { ThemeProps } from 'src/Theme';
 import { TypographyProps } from './Typography';
+
+type TypographyThemeProps = TypographyProps & ThemeProps;
+
+export const getColor = (props: TypographyThemeProps) => {
+  switch (props.colorTheme) {
+    case 'primary':
+      return props.theme.colorSet.primary;
+    case 'inverted':
+      return props.theme.colorSet.textInverted;
+    default:
+      return props.theme.colorSet.text;
+  }
+};
 
 export const getFontSize = (props: TypographyProps) => {
   switch (props.variant) {
@@ -55,5 +69,16 @@ export const getMarginBottom = (props: TypographyProps) => {
       return '1em';
     default:
       return '0.4em';
+  }
+};
+
+export const getCursor = (props: TypographyThemeProps) => {
+  switch (props.variant) {
+    case 'title':
+    case 'headline':
+    case 'subheading':
+      return 'default';
+    default:
+      return null;
   }
 };

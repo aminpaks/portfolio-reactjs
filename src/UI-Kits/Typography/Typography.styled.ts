@@ -1,9 +1,18 @@
 import React from 'react';
 import styled, { darken } from 'src/Theme';
 import { TypographyComponent, TypographyProps } from './Typography';
-import { getFontSize, getFontWeight, getMarginTop, getMarginBottom } from './Util';
+import {
+  getColor,
+  getCursor,
+  getFontSize,
+  getFontWeight,
+  getMarginBottom,
+  getMarginTop,
+} from './Util';
 
 export const Typography: React.FC<TypographyProps> = styled(TypographyComponent)`
+  cursor: ${getCursor};
+  color: ${getColor};
   font-size: ${getFontSize};
   font-weight: ${getFontWeight};
   margin-top: ${getMarginTop};

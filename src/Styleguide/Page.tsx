@@ -4,6 +4,7 @@ import { ButtonsRoute } from './Buttons';
 import { MainLayout } from '../Layout';
 import { GridSystemRoute } from './GridSystem';
 import { TypographiesRoute } from './Typographies';
+import { PanelsRoute } from './Panels';
 
 export const StyleGuide: FC<RouteChildrenProps> = (props) => {
   const { match, history, location } = props;
@@ -17,6 +18,7 @@ export const StyleGuide: FC<RouteChildrenProps> = (props) => {
       <ButtonsRoute {...props} />
       <GridSystemRoute {...props} />
       <TypographiesRoute {...props} />
+      <PanelsRoute {...props} />
     </MainLayout>
   );
 };
