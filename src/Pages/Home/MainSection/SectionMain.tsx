@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { StyledMainSectionContainer } from './SectionMain.styled';
-import { Section } from 'src/+Shared/Section';
+import { CollapsePadding } from 'src/+Shared/CollapsePadding';
 
 export const MainSection: FC<{}> = () => (
-  <Section variant="left-curved">
+  <CollapsePadding variant="left-s-collapse">
     <StyledMainSectionContainer>
       <div>main section</div>
     </StyledMainSectionContainer>
-  </Section>
+  </CollapsePadding>
 );

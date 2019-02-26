@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { StyledSection } from './Section.styled';
 
 export interface SectionProps {
-  variant?: 'fluid' | 'normal' | 'right-curved' | 'left-curved';
+  variant?: 'fluid' | 'normal';
 }
 
 export const Section: FC<SectionProps> = ({ children, variant }) => (

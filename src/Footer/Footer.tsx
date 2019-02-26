@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
 import { StyledFooterContainer } from './Footer.styled';
-import { Section } from 'src/+Shared/Section';
+import { CollapsePadding } from 'src/+Shared/CollapsePadding';
+import { Section } from 'src/+Shared';
 
 export const Footer: FC<{}> = () => (
-  <Section variant="right-curved">
+  <CollapsePadding variant="right-s-collapse">
     <StyledFooterContainer>
       <div>
         <Section variant="fluid">
@@ -11,5 +12,5 @@ export const Footer: FC<{}> = () => (
         </Section>
       </div>
     </StyledFooterContainer>
-  </Section>
+  </CollapsePadding>
 );

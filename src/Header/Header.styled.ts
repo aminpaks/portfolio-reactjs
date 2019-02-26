@@ -13,11 +13,10 @@ export const StyledHeader = styled.div`
   position: fixed;
   z-index: 1000;
 
-  section > div {
+  > div > div {
     height: 74px; /* header inner height */
     display: flex;
     position: relative;
-    padding-left: 14%;
 
     background: ${(props) => props.theme.colorSet.secondary};
     border-bottom: 1px solid
@@ -26,6 +25,10 @@ export const StyledHeader = styled.div`
           .whiten(0.5)
           .hex()
           .toString()};
+  }
+
+  > div > div > div {
+    display: flex;
   }
 `;
 
