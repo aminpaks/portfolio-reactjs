@@ -10,5 +10,5 @@ export interface PanelProps {
 }
 
 export const PanelComponent: FC<PanelProps> = ({ children, className }) => (
-  <article className={className}>{children}</article>
+  <div className={className}>{children}</div>
 );
