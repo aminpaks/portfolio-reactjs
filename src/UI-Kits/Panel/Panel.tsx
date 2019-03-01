@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-export type PanelVariant = 'default' | 'with-top-accent';
+export type PanelVariant = 'default' | 'with-top-accent' | 'overlay-bottom';
 export type PanelMargins = 'default' | 'out-standing';
 
 export interface PanelProps {

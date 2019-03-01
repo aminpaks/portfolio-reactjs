@@ -19,7 +19,6 @@ const setPosition = ({ variant }: SectionProps): string => {
 export const StyledSection = styled.section<SectionProps>`
   padding: 0;
   height: 100%;
-  // border: 1px solid blue;
-
+  position: relative;
   ${setPosition}
 `;

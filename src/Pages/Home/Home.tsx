@@ -1,11 +1,12 @@
 import React from 'react';
 
-// LAyout should be absolute path
+// Layout should be absolute path
 import { MainLayout } from '../../Layout/Main';
 import { HeadTitle } from 'src/+Shared';
 import { Card } from './Card/Card';
 import { MainSection } from './MainSection/SectionMain';
 import { ServicesSection } from './ServicesSection/ServicesSection';
+import { AboutSection } from './AboutSection/AboutSection';
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
@@ -22,6 +23,7 @@ export const HomePage = () => (
     <MainLayout>
       <MainSection />
       <ServicesSection />
+      <AboutSection />
       <Card {...{ backgroundColor: getRandomColor() }}>section 3</Card>
       <Card {...{ backgroundColor: getRandomColor() }}>section 4</Card>
       <Card {...{ backgroundColor: getRandomColor() }}>section 5</Card>
