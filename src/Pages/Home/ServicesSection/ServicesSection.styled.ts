@@ -1,6 +1,3 @@
-import styled from 'styled-components';
+import styled from 'src/Theme';
 
-export const StyledServicesSectionContainer = styled.div`
-  height: 300px;
-  background: grey;
-`;
+export const StyledServicesSectionContainer = styled.div``;

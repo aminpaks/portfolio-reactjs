@@ -1,15 +1,18 @@
 import React, { FC } from 'react';
+
+import { Section } from 'src/+Shared';
 import { StyledCard } from './Card.styled';
 
-
 export interface CardProps {
-  backgroundColor: string;
+  borderColor: string;
 }
 
 export type PartialCardProps = Partial<CardProps>;
 
-export const Card: FC<CardProps> = ({ children, backgroundColor }) => {
+export const Card: FC<CardProps> = ({ children, borderColor }) => {
   return (
-    <StyledCard {...{ backgroundColor }}>{children}</StyledCard>
-  )
+    <Section style={{ borderBottom: `1px solid ${borderColor}` }}>
+      <StyledCard {...{ borderColor: borderColor }}>{children}</StyledCard>
+    </Section>
+  );
 };

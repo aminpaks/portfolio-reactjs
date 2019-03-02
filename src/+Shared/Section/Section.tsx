@@ -1,10 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, CSSProperties } from 'react';
 import { StyledSection } from './Section.styled';
 
 export interface SectionProps {
-  variant?: 'fluid' | 'normal';
+  style?: CSSProperties;
+  variant?: 'default' | 'fluid';
+  backgroundTheme?: 'default' | 'accent' | 'light-gray';
 }
 
-export const Section: FC<SectionProps> = ({ children, variant }) => (
-  <StyledSection variant={variant}>{children}</StyledSection>
+export const Section: FC<SectionProps> = ({ variant, backgroundTheme, style, children }) => (
+  <StyledSection variant={variant} backgroundTheme={backgroundTheme} style={style}>
+    <div>{children}</div>
+  </StyledSection>
 );

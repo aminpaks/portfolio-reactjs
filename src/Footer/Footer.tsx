@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
-import { StyledFooterContainer } from './Footer.styled';
-import { CollapsePadding } from 'src/+Shared/CollapsePadding';
-import { Section } from 'src/+Shared';
 
-export const Footer: FC<{}> = () => (
+import { Section, CollapsePadding } from 'src/+Shared';
+import { StyledFooterContainer } from './Footer.styled';
+
+export const Footer: FC = () => (
   <CollapsePadding variant="right-s-collapse">
     <StyledFooterContainer>
       <div>
-        <Section variant="fluid">
+        <Section>
           <div>content is here</div>
         </Section>
       </div>

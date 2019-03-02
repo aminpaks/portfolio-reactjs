@@ -10,14 +10,14 @@ export interface AboutSectionProps {
 
 export const AboutSection: FC<AboutSectionProps> = ({ children }) => {
   return (
-    <AboutSectionStyled>
-      <Section variant="fluid">
+    <Section backgroundTheme="accent">
+      <AboutSectionStyled>
         section about company
         {children}
         <Panel variant="overlay-bottom">
           <Counter />
         </Panel>
-      </Section>
-    </AboutSectionStyled>
+      </AboutSectionStyled>
+    </Section>
   );
 };

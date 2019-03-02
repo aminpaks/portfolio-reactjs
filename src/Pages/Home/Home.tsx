@@ -7,6 +7,7 @@ import { Card } from './Card/Card';
 import { MainSection } from './MainSection/SectionMain';
 import { ServicesSection } from './ServicesSection/ServicesSection';
 import { AboutSection } from './AboutSection/AboutSection';
+import { PriceListSection } from './PriceList';
 
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
@@ -24,13 +25,14 @@ export const HomePage = () => (
       <MainSection />
       <ServicesSection />
       <AboutSection />
-      <Card {...{ backgroundColor: getRandomColor() }}>section 3</Card>
-      <Card {...{ backgroundColor: getRandomColor() }}>section 4</Card>
-      <Card {...{ backgroundColor: getRandomColor() }}>section 5</Card>
-      <Card {...{ backgroundColor: getRandomColor() }}>section 6</Card>
-      <Card {...{ backgroundColor: getRandomColor() }}>section 7</Card>
-      <Card {...{ backgroundColor: getRandomColor() }}>section 8</Card>
-      <Card {...{ backgroundColor: getRandomColor() }}>section 9</Card>
+      <Card {...{ borderColor: getRandomColor() }}>section 3</Card>
+      <PriceListSection />
+      <Card {...{ borderColor: getRandomColor() }}>section 4</Card>
+      <Card {...{ borderColor: getRandomColor() }}>section 5</Card>
+      <Card {...{ borderColor: getRandomColor() }}>section 6</Card>
+      <Card {...{ borderColor: getRandomColor() }}>section 7</Card>
+      <Card {...{ borderColor: getRandomColor() }}>section 8</Card>
+      <Card {...{ borderColor: getRandomColor() }}>section 9</Card>
     </MainLayout>
   </>
 );
