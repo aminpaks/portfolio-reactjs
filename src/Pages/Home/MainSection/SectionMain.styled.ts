@@ -11,7 +11,7 @@ export const StyledMainSectionContainer = styled.div`
     height: 100%;
   }
 
-  ${mediaQuery.tabletPortraitUp} {
+  ${mediaQuery.tabletPortraitMin} {
     div {
       border-bottom-right-radius: 0px;
       border-bottom-left-radius: 120px;

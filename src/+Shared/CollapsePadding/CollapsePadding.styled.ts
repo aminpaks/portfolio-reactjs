@@ -7,7 +7,7 @@ const setPadding = ({ variant = 'default' }: CollapsePaddingProps): string => {
 
   if (variant === 'left-s-collapse') {
     return `
-      ${mediaQuery.desktopUp} {
+      ${mediaQuery.desktopMin} {
         padding-left: ${sPadding}%;
       }
     `;
@@ -15,7 +15,7 @@ const setPadding = ({ variant = 'default' }: CollapsePaddingProps): string => {
 
   if (variant === 'left-l-collapse') {
     return `
-      ${mediaQuery.desktopUp} {
+      ${mediaQuery.desktopMin} {
         padding-left: 15%;
       }
     `;
@@ -23,7 +23,7 @@ const setPadding = ({ variant = 'default' }: CollapsePaddingProps): string => {
 
   if (variant === 'right-s-collapse') {
     return `
-      ${mediaQuery.desktopUp} {
+      ${mediaQuery.desktopMin} {
         padding-right: ${sPadding}%;
       }
     `;

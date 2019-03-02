@@ -52,3 +52,9 @@ export const fade = (color: string, opacity: number) =>
     .fade(1 - opacity)
     .rgb()
     .toString();
+
+export const saturate = (color: string, ratio: number) =>
+  colorUtils(color)
+    .saturate(ratio)
+    .hex()
+    .toString();

@@ -1,7 +1,7 @@
 export enum breakpoints {
-  phoneOnly = '599px',
-  tabletPortraitUp = '600px',
-  tabletLandscapeUp = '900px',
-  desktopUp = '1200px',
-  bigDesktopUp = '1800px',
+  phoneOnly = 599,
+  tabletPortrait = 600,
+  tabletLandscape = 900,
+  desktop = 1200,
+  bigDesktop = 1800,
 }

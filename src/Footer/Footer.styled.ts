@@ -15,7 +15,7 @@ export const StyledFooterContainer = styled.div`
     background: yellow;
   }
 
-  ${mediaQuery.tabletPortraitUp} {
+  ${mediaQuery.tabletPortraitMin} {
     > div {
       border-top-right-radius: 120px;
       border-top-left-radius: 0;
