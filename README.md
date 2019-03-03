@@ -6,6 +6,7 @@ npm: 6.7.0
 
 # Dev
 ```
-npm run start
+yarn install
+yarn start
 ```
  
