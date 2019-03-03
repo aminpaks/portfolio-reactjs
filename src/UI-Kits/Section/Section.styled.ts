@@ -1,6 +1,7 @@
 import styled, { WithThemeProps, lighten } from 'src/Theme';
-import { SectionProps } from '.';
 import { mediaQuery, breakpoints } from 'src/Device';
+import { SectionProps } from './Section';
+import { StyledTypography } from '../Typography/Typography.styled';
 
 const setWidthValue = ({ variant }: SectionProps) => {
   switch (variant) {
@@ -8,7 +9,7 @@ const setWidthValue = ({ variant }: SectionProps) => {
       return null;
     case 'default':
     default:
-      return `${mediaQuery.desktopUp} { width: ${breakpoints.desktopUp}; }`;
+      return `${mediaQuery.desktopMin} { width: ${breakpoints.desktop}px; }`;
   }
 };
 
@@ -44,7 +45,7 @@ const setBackgroundColor = ({
 }: WithThemeProps<SectionProps>) => {
   switch (backgroundTheme) {
     case 'light-gray':
-      return `background-color: ${lighten(colorSet.gray, 1)}`;
+      return `background-color: ${lighten(colorSet.gray, 1.14)}`;
 
     case 'accent':
       return `background-image: linear-gradient(to top, ${colorSet.secondary}, ${lighten(
@@ -58,15 +59,30 @@ const setBackgroundColor = ({
   }
 };
 
+const setTypographyDetails = ({ backgroundTheme }: WithThemeProps<SectionProps>) => {
+  switch (backgroundTheme) {
+    case 'accent':
+      return ` ${StyledTypography} { font-weight: 600; color: #fff; }`;
+    default:
+      return null;
+  }
+};
+
 export const StyledSection = styled.section<SectionProps>`
   padding-top: 2em;
   padding-bottom: 3em;
-  ${mediaQuery.desktopUp} {
+  ${mediaQuery.desktopMin} {
     padding-top: 6em;
     padding-bottom: 7.8em;
   }
 
   ${setBackgroundColor};
+  ${StyledTypography} {
+    &:first-child {
+      margin-top: 1em;
+    }
+  }
+  ${setTypographyDetails};
 
   > div {
     ${setPaddingValue};

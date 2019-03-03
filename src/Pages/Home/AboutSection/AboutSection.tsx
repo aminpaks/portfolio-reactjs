@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { Panel } from 'src/UI-Kits/Panel/Panel.styled';
+
+import { Panel, Section } from 'src/UI-Kits';
 import { Counter } from './Counter/Counter';
-import { Section } from 'src/+Shared';
 import { AboutSectionStyled } from './AboutSection.styled';
 
 export interface AboutSectionProps {

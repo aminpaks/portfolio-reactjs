@@ -1,6 +1,6 @@
 import React from 'react';
-import { Tab } from 'src/UI-Kits';
-import { HeadTitle, Section } from 'src/+Shared';
+import { Section, Tab } from 'src/UI-Kits';
+import { HeadTitle } from 'src/+Shared';
 import { StyledSectionContainer } from './Tabs.styled';
 
 const lorem = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.';

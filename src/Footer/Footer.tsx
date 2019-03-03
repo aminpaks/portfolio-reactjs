@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
-import { Section, CollapsePadding } from 'src/+Shared';
+import { Section } from 'src/UI-Kits';
+import { CollapsePadding } from 'src/+Shared';
 import { StyledFooterContainer } from './Footer.styled';
 
 export const Footer: FC = () => (

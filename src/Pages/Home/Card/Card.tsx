@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { Section } from 'src/+Shared';
+import { Section } from 'src/UI-Kits';
 import { StyledCard } from './Card.styled';
 
 export interface CardProps {

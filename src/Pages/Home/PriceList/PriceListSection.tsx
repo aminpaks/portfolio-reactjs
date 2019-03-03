@@ -1,4 +1,11 @@
 import React from 'react';
-import { Section } from 'src/+Shared';
 
-export const PriceListSection = () => <Section backgroundTheme="accent">PriceList</Section>;
+import { Typography, Section } from 'src/UI-Kits';
+
+export const PriceListSection = () => (
+  <Section backgroundTheme="accent" style={{ textAlign: 'center' }}>
+    <Typography variant="subheading" style={{ textTransform: 'uppercase' }}>
+      Pricing Plans
+    </Typography>
+  </Section>
+);

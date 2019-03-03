@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { HeadTitle, Section } from 'src/+Shared';
-import { Panel, Typography, Grid, Button } from 'src/UI-Kits';
+
+import { Panel, Typography, Grid, Button, Section } from 'src/UI-Kits';
+import { HeadTitle } from 'src/+Shared';
 import { StyledSectionContainer } from './Panels.styled';
 
 export const Panels: FC = () => {

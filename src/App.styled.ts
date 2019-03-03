@@ -35,6 +35,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   code {
+    text-align: left;
+
     pre {
       display: block;
       overflow: auto;

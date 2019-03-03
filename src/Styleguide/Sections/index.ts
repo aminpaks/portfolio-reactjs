@@ -1,0 +1,1 @@
+export { SectionsRoute } from './Route';

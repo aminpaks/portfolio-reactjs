@@ -1,6 +1,5 @@
-import React from 'react';
 import styled, { darken } from 'src/Theme';
-import { TypographyComponent, TypographyProps } from './Typography';
+import { TypographyComponent } from './Typography';
 import {
   getColor,
   getCursor,
@@ -10,7 +9,7 @@ import {
   getMarginTop,
 } from './Util';
 
-export const Typography: React.FC<TypographyProps> = styled(TypographyComponent)`
+export const StyledTypography = styled(TypographyComponent)`
   cursor: ${getCursor};
   color: ${getColor};
   font-size: ${getFontSize};
