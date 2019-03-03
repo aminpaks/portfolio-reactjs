@@ -14,7 +14,7 @@ export const StyleTabContentItem = styled.div<StyledTabContentItemProps>`
   ${setWidthHeightValue};
 
   display: block;
-  visibility: ${(props) => (props.isActive === true ? 'visible' : 'hidden')};
+  visibility: ${props => (props.isActive === true ? 'visible' : 'hidden')};
   transition: opacity 180ms linear;
 
   &:not(.active) {
@@ -24,5 +24,5 @@ export const StyleTabContentItem = styled.div<StyledTabContentItemProps>`
 
 export const StyledTabContentContainer = styled.div`
   margin-top: 2.15em;
-  color: ${(props) => whiten(props.theme.colorSet.text, 0.8)};
+  color: ${props => whiten(props.theme.colorSet.text, 0.8)};
 `;

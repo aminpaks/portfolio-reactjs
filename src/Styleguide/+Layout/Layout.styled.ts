@@ -9,10 +9,10 @@ export const StyledLayoutContainer = styled.div`
       display: inline-block;
 
       a {
-        color: ${(props) => props.theme.colorSet.secondary};
+        color: ${props => props.theme.colorSet.secondary};
 
         &:hover {
-          color: ${(props) => darken(props.theme.colorSet.secondary, 0.2)};
+          color: ${props => darken(props.theme.colorSet.secondary, 0.2)};
         }
       }
     }

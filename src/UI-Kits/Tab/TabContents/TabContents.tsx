@@ -10,7 +10,7 @@ export interface TabContentProps {
 
 export const TabContents: FC<TabContentProps> = memo(({ activeId, items }: TabContentProps) => (
   <StyledTabContentContainer>
-    {items.map((item) => (
+    {items.map(item => (
       <StyleTabContentItem
         key={item.id}
         isActive={item.id === activeId}

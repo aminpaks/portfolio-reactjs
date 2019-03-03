@@ -16,7 +16,7 @@ export const Grid: FC<PGridProps> & { Col: typeof Column } = ({
 }) => {
   // Calculate all the children's sizes in an array
   const allSizes: (number | null)[] = [];
-  React.Children.forEach(children, (child) => {
+  React.Children.forEach(children, child => {
     if (React.isValidElement<PGridColumnProps>(child)) {
       allSizes.push(child.props.size || null);
     } else {
@@ -24,7 +24,7 @@ export const Grid: FC<PGridProps> & { Col: typeof Column } = ({
     }
   });
   // Map all the children with total sizes
-  const updatedChildren = React.Children.map(children, (child) =>
+  const updatedChildren = React.Children.map(children, child =>
     React.isValidElement<PGridColumnProps>(child)
       ? React.cloneElement<PGridColumnProps>(child, {
           allSizes,

@@ -3,7 +3,7 @@ import { GridColumnProps } from './Column';
 
 const getPotentialSize = (sizes: (number | null)[]) => {
   const totalSize = sizes.reduce<number>((res, s) => res + (s || 0), 0);
-  const total = sizes.filter((v) => v == null);
+  const total = sizes.filter(v => v == null);
   const x = (12 - totalSize) / total.length;
   return x;
 };

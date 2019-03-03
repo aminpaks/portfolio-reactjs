@@ -11,7 +11,7 @@ export interface TabButtonProps {
 
 export const TabButtons: FC<TabButtonProps> = memo(({ items, activeId, onTabSelect }) => (
   <StyledTabButtonContainer>
-    {items.map((item) => (
+    {items.map(item => (
       <StyledTabButton key={item.id} isActive={item.id === activeId}>
         <button
           className={activeId === item.id ? 'active' : ''}

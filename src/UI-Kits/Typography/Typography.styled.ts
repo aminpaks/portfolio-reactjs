@@ -36,8 +36,8 @@ export const StyledTypography = styled(TypographyComponent)`
 
   /* highlighted text */
   mark {
-    color: ${(props) => props.theme.colorSet.textInverted};
-    background-color: ${(props) => darken(props.theme.colorSet.primary, 0.1)};
+    color: ${props => props.theme.colorSet.textInverted};
+    background-color: ${props => darken(props.theme.colorSet.primary, 0.1)};
     padding: 0.1em 0.4em;
   }
 `;

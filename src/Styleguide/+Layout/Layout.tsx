@@ -9,7 +9,7 @@ export const Layout: FC<{ navItems: { title: string; url: string }[] }> = ({
 }) => (
   <StyledLayoutContainer>
     <ul>
-      {navItems.map((item) => (
+      {navItems.map(item => (
         <li key={item.url}>
           <Link to={item.url}>{item.title}</Link>
         </li>

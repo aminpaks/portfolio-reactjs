@@ -18,9 +18,9 @@ export const StyledHeader = styled.div`
     display: flex;
     position: relative;
 
-    background: ${(props) => props.theme.colorSet.secondary};
+    background: ${props => props.theme.colorSet.secondary};
     border-bottom: 1px solid
-      ${(props) =>
+      ${props =>
         colorUtils(props.theme.colorSet.secondary)
           .whiten(0.5)
           .hex()
@@ -48,7 +48,7 @@ export const StyledNavLinksContainer = styled.div`
   margin-left: 1em;
 
   a {
-    color: ${(props) => props.theme.colorSet.textInverted};
+    color: ${props => props.theme.colorSet.textInverted};
     flex: 0 0 auto;
     padding: 0 0.6em;
     margin-left: calc(1em + ${navLinksSeparatorWidth});

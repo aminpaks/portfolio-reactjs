@@ -18,15 +18,15 @@ export const StyledTabButton = styled.li<{ isActive: boolean }>`
     font-size: 1.1rem;
     position: relative;
     padding: 0.85em 0.1em 0.73em;
-    color: ${(props) =>
+    color: ${props =>
       props.isActive
         ? whiten(props.theme.colorSet.text, 0.8)
         : whiten(props.theme.colorSet.text, 4)};
     transition: 180ms ease-in-out;
-    cursor: ${(props) => (props.isActive ? 'default' : 'pointer')};
+    cursor: ${props => (props.isActive ? 'default' : 'pointer')};
 
     &:hover {
-      color: ${(props) => (props.isActive ? null : props.theme.colorSet.primary)};
+      color: ${props => (props.isActive ? null : props.theme.colorSet.primary)};
     }
 
     ${mediaQuery.tabletPortraitMin} {
@@ -42,7 +42,7 @@ export const StyledTabButton = styled.li<{ isActive: boolean }>`
         display: block;
         position: absolute;
         transition: 220ms;
-        background-color: ${(props) => props.theme.colorSet.primary};
+        background-color: ${props => props.theme.colorSet.primary};
       }
     }
     &.active {
@@ -55,11 +55,11 @@ export const StyledTabButton = styled.li<{ isActive: boolean }>`
     ${mediaQuery.tabletPortraitMax} {
       &.active {
         color: #fff;
-        background-color: ${(props) => darken(props.theme.colorSet.primary, 0.1)};
+        background-color: ${props => darken(props.theme.colorSet.primary, 0.1)};
       }
       &:not(.active):hover {
         color: #fff;
-        background-color: ${(props) => props.theme.colorSet.primary};
+        background-color: ${props => props.theme.colorSet.primary};
       }
     }
   }

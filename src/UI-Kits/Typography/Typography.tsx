@@ -27,7 +27,6 @@ const getComponentType = (variant: TypographyVariant) => {
 export const TypographyComponent: FC<TypographyProps> = ({
   text,
   variant,
-  colorTheme,
   component,
   children,
   ...rest

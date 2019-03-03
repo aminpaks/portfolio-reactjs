@@ -5,7 +5,7 @@ export const StyledFooterContainer = styled.div`
   height: 620px;
 
   > div {
-    background: ${(props) => props.theme.colorSet.secondary};
+    background: ${props => props.theme.colorSet.secondary};
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
     height: 100%;

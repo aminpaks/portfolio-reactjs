@@ -9,7 +9,7 @@ import { SectionsRoute } from './Sections';
 import { TabsRoute } from './Tabs';
 import { TypographiesRoute } from './Typographies';
 
-export const StyleGuide: FC<RouteChildrenProps> = (props) => {
+export const StyleGuide: FC<RouteChildrenProps> = props => {
   const { match, history, location } = props;
 
   // Redirect from /styleguide to /styleguide/buttons temporarily
