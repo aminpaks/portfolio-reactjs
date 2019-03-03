@@ -4,5 +4,5 @@ import { RouteChildrenProps } from 'react-router';
 import { Typographies } from './Typographies';
 
 export const TypographiesRoute: FC<RouteChildrenProps> = ({ match }) => (
-  <Route exact path={`${match ? match.url : ''}/typography`} component={Typographies} />
+  <Route exact path={`${match ? match.url : ''}/typographies`} component={Typographies} />
 );

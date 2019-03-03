@@ -25,10 +25,11 @@ const getComponentType = (variant: TypographyVariant) => {
 };
 
 export const TypographyComponent: FC<TypographyProps> = ({
-  children,
-  component,
   text,
   variant,
+  colorTheme,
+  component,
+  children,
   ...rest
 }) => {
   const Component: any = component || getComponentType(variant) || 'h2';

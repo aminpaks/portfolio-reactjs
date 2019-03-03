@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { RouteChildrenProps } from 'react-router';
 
-import { MainLayout } from '../Layout';
+import { Layout, LayoutSection } from './+Layout';
 import { ButtonsRoute } from './Buttons';
 import { GridSystemRoute } from './GridSystem';
 import { PanelsRoute } from './Panels';
@@ -17,13 +17,24 @@ export const StyleGuide: FC<RouteChildrenProps> = (props) => {
     history.push(`${match ? match.url : ''}/buttons`);
   }
   return (
-    <MainLayout>
-      <ButtonsRoute {...props} />
-      <GridSystemRoute {...props} />
-      <PanelsRoute {...props} />
-      <SectionsRoute {...props} />
-      <TabsRoute {...props} />
-      <TypographiesRoute {...props} />
-    </MainLayout>
+    <Layout
+      navItems={[
+        { title: '<< Exit StyleGuide >>', url: '../' },
+        { title: 'Buttons', url: './buttons' },
+        { title: 'Grid System', url: './grid-system' },
+        { title: 'Panels', url: './panels' },
+        { title: 'Tabs', url: './tabs' },
+        { title: 'Typographies', url: './typographies' },
+      ]}
+    >
+      <LayoutSection>
+        <ButtonsRoute {...props} />
+        <GridSystemRoute {...props} />
+        <TypographiesRoute {...props} />
+        <PanelsRoute {...props} />
+        <SectionsRoute {...props} />
+        <TabsRoute {...props} />
+      </LayoutSection>
+    </Layout>
   );
 };
