@@ -1,7 +1,7 @@
 import styled, { WithThemeProps, lighten } from 'src/Theme';
 import { mediaQuery, breakpoints } from 'src/Device';
+
 import { SectionProps } from './Section';
-import { StyledTypography } from '../Typography/Typography.styled';
 
 const setWidthValue = ({ variant }: SectionProps) => {
   switch (variant) {
@@ -9,7 +9,10 @@ const setWidthValue = ({ variant }: SectionProps) => {
       return null;
     case 'default':
     default:
-      return `${mediaQuery.desktopMin} { width: ${breakpoints.desktop}px; }`;
+      return `
+${mediaQuery.tabletLandscapeMin} { width: calc(${breakpoints.tabletLandscape}px - 4.8rem); }
+${mediaQuery.desktopMin} { width: calc(${breakpoints.desktop}px - 4.8rem); }
+      `;
   }
 };
 
@@ -24,19 +27,21 @@ const getMarginValue = ({ variant }: SectionProps) => {
 };
 
 const setPaddingValue = ({ variant }: SectionProps) => {
-  if (variant === 'default') {
-    return `
-      padding-left: 15%;
-      padding-right: 15%;
+  switch (variant) {
+    case 'fluid':
+      return null;
+    case 'default':
+    default:
+      return `
+padding-left: 1.2rem;
+padding-right: 1.2rem;
 
-      ${mediaQuery.phoneOnly} {
-        padding-left: 2%;
-        padding-right: 2%;
-      }
+${mediaQuery.tabletPortraitMin} {
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
     `;
   }
-
-  return null;
 };
 
 const setBackgroundColor = ({
@@ -59,15 +64,6 @@ const setBackgroundColor = ({
   }
 };
 
-const setTypographyDetails = ({ backgroundTheme }: WithThemeProps<SectionProps>) => {
-  switch (backgroundTheme) {
-    case 'accent':
-      return ` ${StyledTypography} { font-weight: 600; color: #fff; }`;
-    default:
-      return null;
-  }
-};
-
 export const StyledSection = styled.section<SectionProps>`
   padding-top: 2em;
   padding-bottom: 3em;
@@ -77,12 +73,6 @@ export const StyledSection = styled.section<SectionProps>`
   }
 
   ${setBackgroundColor};
-  ${StyledTypography} {
-    &:first-child {
-      margin-top: 1em;
-    }
-  }
-  ${setTypographyDetails};
 
   > div {
     ${setPaddingValue};

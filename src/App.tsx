@@ -1,6 +1,7 @@
 import React, { Suspense, Component } from 'react';
 import WebFont from 'webfontloader';
 import { BrowserRouter, Route } from 'react-router-dom';
+
 import { GlobalStyles } from './App.styled';
 import { HomePageRoute } from './Pages';
 import { StyleGuide } from './Styleguide';
