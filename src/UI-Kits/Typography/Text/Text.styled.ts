@@ -46,7 +46,9 @@ export const StyledTypographyText = styled(TypographyTextComponent)`
       margin-bottom: ${getMarginBottom('headline')};
     }
     &[data-variant='subheading'] {
-      margin-top: ${getMarginTop('subheading')};
+      :not(:first-child) {
+        margin-top: ${getMarginTop('subheading')};
+      }
       margin-bottom: ${getMarginBottom('subheading')};
     }
     &[data-variant='title'] {

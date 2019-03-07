@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
   html {
     color: ${props => props.theme.colorSet.text};
     font-size: 14px;
+    line-height: 1.6;
   }
   html, body {
     display: flex;
