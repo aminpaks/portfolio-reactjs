@@ -1,28 +1,14 @@
 import styled, { darken } from 'src/Theme';
 import { TypographyComponent } from './Typography';
-import {
-  getColor,
-  getCursor,
-  getFontSize,
-  getFontWeight,
-  getMarginBottom,
-  getMarginTop,
-} from './Util';
+import { getColor, getCursor, getFontSize, getFontWeight } from './Util';
 
 export const StyledTypography = styled(TypographyComponent)`
-  cursor: ${getCursor};
   color: ${getColor};
   font-size: ${getFontSize};
   font-weight: ${getFontWeight};
-  margin-top: ${getMarginTop};
-  margin-bottom: ${getMarginBottom};
-
-  & + p {
-    margin-top: 0;
-  }
-  &:last-child {
-    margin-bottom: 2.4em;
-  }
+  margin-top: 0;
+  margin-bottom: 0;
+  cursor: ${getCursor};
 
   /* strikethrough text */
   .strike-text {

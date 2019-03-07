@@ -16,17 +16,17 @@ WebFont.load({
 class App extends Component {
   render() {
     return (
-      <>
-        <GlobalStyles />
-        <ThemeProvider>
+      <ThemeProvider>
+        <>
+          <GlobalStyles />
           <BrowserRouter>
             <Suspense fallback={<div>Loading</div>}>
               <HomePageRoute />
               <Route path="/styleguide" component={StyleGuide} />
             </Suspense>
           </BrowserRouter>
-        </ThemeProvider>
-      </>
+        </>
+      </ThemeProvider>
     );
   }
 }

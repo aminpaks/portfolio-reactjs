@@ -3,14 +3,16 @@ import { TypographyProps } from './Typography';
 
 type TypographyThemeProps = TypographyProps & ThemeProps;
 
-export const getColor = (props: TypographyThemeProps) => {
-  switch (props.colorTheme) {
+export const getColor = ({ colorTheme, theme: { colorSet } }: TypographyThemeProps) => {
+  switch (colorTheme) {
+    case 'default':
+      return colorSet.text;
     case 'primary':
-      return props.theme.colorSet.primary;
+      return colorSet.primary;
     case 'inverted':
-      return props.theme.colorSet.textInverted;
+      return colorSet.textInverted;
     default:
-      return props.theme.colorSet.text;
+      return null;
   }
 };
 
@@ -40,35 +42,6 @@ export const getFontWeight = (props: TypographyProps) => {
       return '400';
     default:
       return null;
-  }
-};
-
-export const getMarginTop = (props: TypographyProps) => {
-  switch (props.variant) {
-    case 'title':
-      return '1.6em';
-    case 'headline':
-      return '2em';
-    case 'subheading':
-      return '2.5em';
-    case 'body':
-    default:
-      return '1em';
-  }
-};
-
-export const getMarginBottom = (props: TypographyProps) => {
-  switch (props.variant) {
-    case 'title':
-      return '0.3em';
-    case 'headline':
-      return '0.5em';
-    case 'subheading':
-      return '0.75em';
-    case 'body':
-      return '1em';
-    default:
-      return '0.4em';
   }
 };
 

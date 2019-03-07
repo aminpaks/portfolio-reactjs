@@ -1,14 +1,15 @@
-import React, { FC, CSSProperties } from 'react';
+import { FC, CSSProperties, createElement, ComponentType } from 'react';
 
 export type TypographyVariant = 'title' | 'headline' | 'subheading' | 'body';
-export type TypographyColorTheme = 'primary' | 'inverted';
+export type TypographyColorTheme = 'default' | 'primary' | 'inverted';
 
 export interface TypographyProps {
-  component?: 'h2' | 'h3';
+  component?: string | ComponentType<any>;
   variant: TypographyVariant;
   colorTheme?: TypographyColorTheme;
   text?: string;
   style?: CSSProperties;
+  className?: string;
 }
 
 const getComponentType = (variant: TypographyVariant) => {
@@ -25,16 +26,12 @@ const getComponentType = (variant: TypographyVariant) => {
 };
 
 export const TypographyComponent: FC<TypographyProps> = ({
-  text,
+  text = null,
   variant,
   component,
   children,
-  ...rest
+  className,
 }) => {
-  const Component: any = component || getComponentType(variant) || 'h2';
-  return (
-    <Component {...rest} variant={variant}>
-      {children || text}
-    </Component>
-  );
+  const componentType = component || getComponentType(variant) || 'h2';
+  return createElement(componentType, { className, 'data-variant': variant }, children || text);
 };

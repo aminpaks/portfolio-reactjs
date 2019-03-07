@@ -2,6 +2,8 @@ import styled, { WithThemeProps, lighten } from 'src/Theme';
 import { mediaQuery, breakpoints } from 'src/Device';
 
 import { SectionProps } from './Section';
+import { StyledPanel } from '../Panel/Panel.styled';
+import { StyledTypography } from '../Typography/Typography.styled';
 
 const setWidthValue = ({ variant }: SectionProps) => {
   switch (variant) {
@@ -53,10 +55,22 @@ const setBackgroundColor = ({
       return `background-color: ${lighten(colorSet.gray, 1.14)}`;
 
     case 'accent':
-      return `background-image: linear-gradient(to top, ${colorSet.secondary}, ${lighten(
+      return `
+background-image: linear-gradient(to top, ${colorSet.secondary}, ${lighten(
         colorSet.secondary,
         0.1,
-      )})`;
+      )});
+color: ${colorSet.textInverted};
+${StyledPanel} {
+  color: ${colorSet.text};
+}
+${StyledTypography}[data-variant="body"] {
+  font-weight: 700;
+}
+${StyledPanel} ${StyledTypography}[data-variant="body"] {
+  font-weight: 400;
+}
+      `;
 
     case 'default':
     default:

@@ -1,6 +1,11 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { ThemeProps } from 'src/Theme';
 
-export const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle<ThemeProps>`
+  html {
+    color: ${props => props.theme.colorSet.text};
+    font-size: 14px;
+  }
   html, body {
     display: flex;
     flex: 1 0 100%;
@@ -10,7 +15,6 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-size: 14px;
     font-family: 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -21,7 +25,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   a {
-    color: #61dafb;
+    color: inherit;
   }
 
   b {

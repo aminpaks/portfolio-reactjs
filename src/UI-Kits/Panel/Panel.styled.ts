@@ -1,9 +1,8 @@
-import { FC } from 'react';
 import styled, { fade } from 'src/Theme';
 import { getPaddingValue, buildVariants } from './Util';
-import { PanelComponent, PanelProps } from './Panel';
+import { PanelComponent } from './Panel';
 
-export const Panel: FC<PanelProps> = styled(PanelComponent)`
+export const StyledPanel = styled(PanelComponent)`
   display: block;
   padding: ${getPaddingValue};
   overflow: hidden;
