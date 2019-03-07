@@ -12,7 +12,7 @@ import { TypographiesRoute } from './Typographies';
 
 export const StyleGuide: FC<RouteChildrenProps> = props => {
   const { location } = props;
-  const isStyleguideRoot = location.pathname.endsWith('/styleguide');
+  const isStyleguideRoot = /\/styleguide\/?$/i.test(location.pathname);
 
   return (
     <Layout
@@ -22,20 +22,19 @@ export const StyleGuide: FC<RouteChildrenProps> = props => {
         { title: 'Carousels', url: './carousels' },
         { title: 'Grid System', url: './grid-system' },
         { title: 'Panels', url: './panels' },
+        { title: 'Sections', url: './sections' },
         { title: 'Tabs', url: './tabs' },
         { title: 'Typographies', url: './typographies' },
       ]}
     >
-      <LayoutSection>
-        {isStyleguideRoot && <Redirect to="/styleguide/buttons" />}
-        <ButtonsRoute {...props} />
-        <CarouselsRoute {...props} />
-        <GridSystemRoute {...props} />
-        <TypographiesRoute {...props} />
-        <PanelsRoute {...props} />
-        <SectionsRoute {...props} />
-        <TabsRoute {...props} />
-      </LayoutSection>
+      {isStyleguideRoot && <Redirect to="/styleguide/buttons" />}
+      <ButtonsRoute {...props} />
+      <CarouselsRoute {...props} />
+      <GridSystemRoute {...props} />
+      <TypographiesRoute {...props} />
+      <PanelsRoute {...props} />
+      <SectionsRoute {...props} />
+      <TabsRoute {...props} />
     </Layout>
   );
 };

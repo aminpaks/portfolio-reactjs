@@ -1,9 +1,8 @@
 import React, { CSSProperties, useState } from 'react';
 
-import { Carousel, Typography } from 'src/UI-Kits';
+import { Carousel, Typography, Section } from 'src/UI-Kits';
 import { getRandomColor, getForegroundColor } from 'src/Theme';
 import { HeadTitle } from 'src/+Shared';
-import { StyledCarouselsContainer as Container } from './Carousels.styled';
 
 const getStandardStyles = (extra?: CSSProperties): CSSProperties => {
   const backgroundColor = getRandomColor();
@@ -24,16 +23,16 @@ export const Carousels = () => {
     <>
       <HeadTitle suffix="Styleguide" title="Carousels" />
 
-      <Container>
+      <Section>
         <Typography variant="headline" text="Simple" />
         <Carousel>
           <Carousel.Slide style={getStandardStyles()}>Slide 1</Carousel.Slide>
           <Carousel.Slide style={getStandardStyles()}>Slide 2</Carousel.Slide>
           <Carousel.Slide style={getStandardStyles()}>Slide 3</Carousel.Slide>
         </Carousel>
-      </Container>
+      </Section>
 
-      <Container>
+      <Section backgroundTheme="light-gray">
         <Typography variant="headline" text="Bigger Arrow and 2 Slides & draggable" />
         <Carousel draggable arrowSize="4.8em" slidesToShow={2}>
           <Carousel.Slide style={getStandardStyles()}>Slide 1</Carousel.Slide>
@@ -41,9 +40,9 @@ export const Carousels = () => {
           <Carousel.Slide style={getStandardStyles()}>Slide 3</Carousel.Slide>
           <Carousel.Slide style={getStandardStyles()}>Slide 4</Carousel.Slide>
         </Carousel>
-      </Container>
+      </Section>
 
-      <Container>
+      <Section>
         <Typography variant="headline" text="Padding and Shadow for Slides" />
         <label>
           <span>Set padding value: </span>
@@ -59,7 +58,7 @@ export const Carousels = () => {
           <Carousel.Slide style={getStandardStyles()}>Slide 3</Carousel.Slide>
           <Carousel.Slide style={getStandardStyles()}>Slide 4</Carousel.Slide>
         </Carousel>
-      </Container>
+      </Section>
     </>
   );
 };

@@ -8,13 +8,15 @@ export const Panels: FC = () => {
   return (
     <>
       <HeadTitle title="Panels" suffix="Styleguide" />
-      <Section variant="fluid">
+
+      <Section>
         <Typography variant="headline" text="One Sample Panel" />
         <StyledSectionContainer>
           <Panel>Content 1</Panel>
         </StyledSectionContainer>
       </Section>
-      <Section variant="fluid">
+
+      <Section backgroundTheme="accent">
         <Typography variant="headline" text="Tree Sample Panel" />
         <StyledSectionContainer style={{ textAlign: 'center' }}>
           <Grid>
@@ -59,7 +61,8 @@ export const Panels: FC = () => {
           </Grid>
         </StyledSectionContainer>
       </Section>
-      <Section variant="fluid">
+
+      <Section backgroundTheme="light-gray">
         <Typography variant="headline" text="Four Sample Panel" />
         <StyledSectionContainer style={{ textAlign: 'center' }}>
           <Grid>
