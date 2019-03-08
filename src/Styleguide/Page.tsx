@@ -21,12 +21,16 @@ const routes = [
   { title: 'Tabs', url: './tabs' },
   { title: 'Typographies', url: './typographies' },
 ];
+const isValidRoute = (currentRoute: string) =>
+  routes.some(route => {
+    const routeEnding = route.url.split('/').pop()!;
+    return routeEnding ? currentRoute.endsWith(routeEnding) : false;
+  }) === false;
 
 export const StyleGuide: FC<RouteChildrenProps> = props => {
   const { location } = props;
-  const shouldRedirect =
-    /\/styleguide\/?$/i.test(location.pathname) ||
-    routes.some(route => location.pathname.replace(reTrailingSlash, '').endsWith(route.url)) === false;
+  const currentUrl = location.pathname.replace(reTrailingSlash, '');
+  const shouldRedirect = isValidRoute(currentUrl);
 
   return (
     <Layout navItems={routes}>
