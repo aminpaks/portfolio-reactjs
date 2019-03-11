@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
-import baseStyled, {
-  ThemedStyledInterface,
-  ThemeProvider as StyledThemeProvider,
-} from 'styled-components';
+import baseStyled, { ThemedStyledInterface, ThemeProvider as StyledThemeProvider } from 'styled-components';
+
 import { Theme } from './types';
 
 export const defaultTheme: Theme = {
@@ -30,15 +28,23 @@ export const defaultTheme: Theme = {
     xl: 1200,
     xxl: 1600,
   },
+  tokens: {
+    spacing: {
+      xs: '0.7143rem',
+      sm: '1.2857rem',
+      md: '1.85715rem',
+      lg: '2.7143rem',
+      xl: '3.7143rem',
+      xxl: '5.7143rem',
+    },
+  },
 };
 
 export const ThemeProvider: FC = ({ children }) => {
   const onlyChild = React.Children.only(children);
 
   if (onlyChild == null || !React.isValidElement<any>(onlyChild)) {
-    throw new TypeError(
-      'You need to pass only one valid component as the children of ThemeProvider',
-    );
+    throw new TypeError('You need to pass only one valid component as the children of ThemeProvider');
   }
 
   return <StyledThemeProvider theme={defaultTheme}>{onlyChild}</StyledThemeProvider>;

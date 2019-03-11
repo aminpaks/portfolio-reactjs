@@ -15,6 +15,31 @@ export interface ColorSet {
   success: string;
 }
 
+export type PropertySide = 'top' | 'right' | 'bottom' | 'left';
+
+export type SpacingToken = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | '0';
+
+export type CSSShorthandProperty<T extends string> = [T, T?, T?, T?];
+
+export interface TokenValue {
+  [key: string]: string;
+}
+
+export interface SpacingTokenValue extends TokenValue {
+  xs: string;
+  sm: string;
+  md: string;
+  lg: string;
+  xl: string;
+  xxl: string;
+}
+
+export interface Tokens {
+  spacing: SpacingTokenValue;
+}
+
+export type TokenType = keyof Tokens;
+
 export interface FontSet {
   primary: string;
   secondary: string;
@@ -32,6 +57,7 @@ export interface ViewBreakpoints {
 export interface Theme {
   colorSet: ColorSet;
   breakpoints: ViewBreakpoints;
+  tokens: Tokens;
 }
 
 export interface ThemeProps {

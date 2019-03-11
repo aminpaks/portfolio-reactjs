@@ -5,7 +5,7 @@ import { styled } from './Theme';
 import { Theme } from './types';
 export * from './Theme';
 export * from './types';
-export * from './Util';
+export * from './Utils';
 
 // I kept this here as TSX doesn't allow for type assertion
 export const ThemeContext: Context<Theme> = StyledThemeContext;
