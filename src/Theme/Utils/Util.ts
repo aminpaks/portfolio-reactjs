@@ -45,6 +45,8 @@ const validateCssShorthandProperty = <T extends string>(value?: CSSShorthandProp
   }
 };
 
+const validTokens = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
+
 const mapTokenToValue = <T extends string, U extends string>(
   tokens: TokenValue,
   property: CSSShorthandProperty<T>,
@@ -54,7 +56,7 @@ const mapTokenToValue = <T extends string, U extends string>(
       if (cur == null) {
         return acc;
       }
-      acc[index] = cur === '0' ? '0' : tokens[cur];
+      acc[index] = validTokens.includes(cur) ? tokens[cur] : cur;
       return acc;
     },
     Array(property.length) as CSSShorthandProperty<any>,

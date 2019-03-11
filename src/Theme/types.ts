@@ -17,7 +17,7 @@ export interface ColorSet {
 
 export type PropertySide = 'top' | 'right' | 'bottom' | 'left';
 
-export type SpacingToken = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | '0';
+export type SpacingToken = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'auto' | '0';
 
 export type CSSShorthandProperty<T extends string> = [T, T?, T?, T?];
 

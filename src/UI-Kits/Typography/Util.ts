@@ -34,7 +34,7 @@ export const getFontSize = (props: TypographyProps) => {
 export const getFontWeight = (props: TypographyProps) => {
   switch (props.variant) {
     case 'title':
-      return '700 !important';
+      return '700';
     case 'headline':
     case 'subheading':
       return '600';

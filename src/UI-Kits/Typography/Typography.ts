@@ -25,13 +25,7 @@ const getComponentType = (variant: TypographyVariant) => {
   }
 };
 
-export const TypographyComponent: FC<TypographyProps> = ({
-  text = null,
-  variant,
-  component,
-  children,
-  className,
-}) => {
+export const TypographyComponent: FC<TypographyProps> = ({ children, className, component, style, text, variant }) => {
   const componentType = component || getComponentType(variant) || 'h2';
-  return createElement(componentType, { className, 'data-variant': variant }, children || text);
+  return createElement(componentType, { style, className, 'data-variant': variant }, children || text || null);
 };
