@@ -7,6 +7,7 @@ import { CarouselsRoute } from './Carousels';
 import { GridSystemRoute } from './GridSystem';
 import { PanelsRoute } from './Panels';
 import { SectionsRoute } from './Sections';
+import { SpacingsRoute } from './Spacings';
 import { TabsRoute } from './Tabs';
 import { TypographiesRoute } from './Typographies';
 
@@ -18,6 +19,7 @@ const routes = [
   { title: 'Grid System', url: './grid-system' },
   { title: 'Panels', url: './panels' },
   { title: 'Sections', url: './sections' },
+  { title: 'Spacing', url: './spacings' },
   { title: 'Tabs', url: './tabs' },
   { title: 'Typographies', url: './typographies' },
 ];
@@ -41,6 +43,7 @@ export const StyleGuide: FC<RouteChildrenProps> = props => {
       <TypographiesRoute {...props} />
       <PanelsRoute {...props} />
       <SectionsRoute {...props} />
+      <SpacingsRoute {...props} />
       <TabsRoute {...props} />
     </Layout>
   );

@@ -25,13 +25,9 @@ export const getRandomColor = () => {
   return `#${red}${green}${blue}`;
 };
 
-export const shouldUseDarkForeground = (background: string) =>
-  getPerceivedBrightness(background) >= 130;
+export const shouldUseDarkForeground = (background: string) => getPerceivedBrightness(background) >= 130;
 
-export const getForegroundColor = (
-  backgroundColor: string,
-  colorSet?: { text: string; textInverted: string },
-) => {
+export const getForegroundColor = (backgroundColor: string, colorSet?: { text: string; textInverted: string }) => {
   const { text, textInverted } = colorSet || { text: '#000', textInverted: '#fff' };
 
   return shouldUseDarkForeground(backgroundColor) ? text : textInverted;
@@ -72,29 +68,3 @@ export const saturate = (color: string, ratio: number) =>
     .saturate(ratio)
     .hex()
     .toString();
-
-const parseCSSValue = (input: string) => {
-  const [, potentialValue, potentialUnit] = /(\d+(?:\.\d+)?)(\w+)?/i.exec(input) || [
-    undefined,
-    '0',
-    'em',
-  ];
-  return { value: parseFloat(potentialValue), unit: potentialUnit };
-};
-
-export const getPropValue = <T>({
-  prop,
-  defaultValue,
-  normalize = 1,
-}: {
-  prop: Extract<keyof T, string>;
-  defaultValue?: string;
-  normalize?: number;
-}) => (props: T) => {
-  const propertyValue: any = props[prop] || defaultValue;
-  if (propertyValue == null) {
-    return undefined;
-  }
-  const { value, unit } = parseCSSValue(propertyValue);
-  return value === 0 ? '0' : (value * normalize).toFixed(2) + unit;
-};
