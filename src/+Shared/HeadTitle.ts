@@ -5,7 +5,7 @@ interface HeadTitleProps {
   title?: string;
 }
 
-export const HeadTitle: FC<HeadTitleProps> = ({ suffix = 'DMotivation', title }) => {
+export const HeadTitle: FC<HeadTitleProps> = ({ suffix = 'Amin Paks Portfolio', title }) => {
   useEffect(() => {
     const head: HTMLTitleElement | null = document.querySelector('head title');
     if (head) {
