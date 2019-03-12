@@ -21,7 +21,7 @@ export const getFontSize = (props: TypographyProps) => {
     case 'title':
       return '3.4em';
     case 'headline':
-      return '2em';
+      return '2.6em';
     case 'subheading':
       return '1.4em';
     case 'body':

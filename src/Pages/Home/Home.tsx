@@ -5,7 +5,7 @@ import { MainLayout } from '../../Layout/Main';
 import { HeadTitle } from 'src/+Shared';
 import { Card } from './Card/Card';
 import { MainSection } from './MainSection/SectionMain';
-import { ServicesSection } from './ServicesSection/ServicesSection';
+import { ServicesSection } from './Services';
 import { AboutSection } from './AboutSection/AboutSection';
 import { PriceListSection } from './PriceList';
 
