@@ -68,3 +68,9 @@ export const saturate = (color: string, ratio: number) =>
     .saturate(ratio)
     .hex()
     .toString();
+
+export const mixWith = (origin: string, mixture: string, mixtureWeight: number) =>
+  colorUtils(origin)
+    .mix(colorUtils(mixture), mixtureWeight)
+    .hex()
+    .toString();
