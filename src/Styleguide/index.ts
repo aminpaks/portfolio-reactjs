@@ -1,1 +1,1 @@
-export * from './Page';
+export { StyleguidePageRoute } from './Route';

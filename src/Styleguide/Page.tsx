@@ -29,7 +29,7 @@ const isValidRoute = (currentRoute: string) =>
     return routeEnding ? currentRoute.endsWith(routeEnding) : false;
   }) === false;
 
-export const StyleGuide: FC<RouteChildrenProps> = props => {
+export const StyleguidePage: FC<RouteChildrenProps> = props => {
   const { location } = props;
   const currentUrl = location.pathname.replace(reTrailingSlash, '');
   const shouldRedirect = isValidRoute(currentUrl);
@@ -48,3 +48,5 @@ export const StyleGuide: FC<RouteChildrenProps> = props => {
     </Layout>
   );
 };
+
+export default StyleguidePage;
