@@ -4,17 +4,12 @@ import { DefaultNavLinks } from './Links';
 import { CollapsePadding } from 'src/+Shared/CollapsePadding';
 
 export interface HeaderProps {
-  logo?: React.ReactElement<any>;
+  logo?: React.ReactElement<any> | null;
 }
 
-const DefaultLogo = () => (
-  <img src="https://brandongaille.com/wp-content/uploads/2013/07/Dell-Company-Logo.jpg" />
-);
+const DefaultLogo = () => <img src="https://brandongaille.com/wp-content/uploads/2013/07/Dell-Company-Logo.jpg" />;
 
-export const Header: FC<HeaderProps> = ({
-  logo = <DefaultLogo />,
-  children = <DefaultNavLinks />,
-}) => (
+export const Header: FC<HeaderProps> = ({ logo = <DefaultLogo />, children = <DefaultNavLinks /> }) => (
   <StyledHeader>
     <CollapsePadding variant="left-s-collapse">
       <div>

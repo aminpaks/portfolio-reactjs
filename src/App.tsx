@@ -1,6 +1,6 @@
 import React, { Suspense, Component } from 'react';
 import WebFont from 'webfontloader';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter, Route } from 'react-router-dom';
 
 import { GlobalStyles } from './App.styled';
 import { HomePageRoute } from './Pages';
@@ -19,12 +19,12 @@ class App extends Component {
       <ThemeProvider>
         <>
           <GlobalStyles />
-          <BrowserRouter>
+          <HashRouter basename={process.env.PUBLIC_URL}>
             <Suspense fallback={<div>Loading</div>}>
               <HomePageRoute />
               <Route path="/styleguide" component={StyleGuide} />
             </Suspense>
-          </BrowserRouter>
+          </HashRouter>
         </>
       </ThemeProvider>
     );

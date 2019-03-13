@@ -5,7 +5,7 @@ import { Footer } from 'src/Footer/Footer';
 
 export const MainLayout: FC<{}> = ({ children }) => (
   <StyledContainer>
-    <Header />
+    <Header logo={null} />
     {children}
     <Footer />
   </StyledContainer>
