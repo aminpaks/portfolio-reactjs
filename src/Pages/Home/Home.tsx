@@ -6,7 +6,7 @@ import { HeadTitle } from 'src/+Shared';
 import { Card } from './Card/Card';
 import { MainSection } from './MainSection/SectionMain';
 import { ServicesSection } from './Services';
-import { AboutSection } from './AboutSection/AboutSection';
+import { AboutSection } from './AboutTeam';
 import { PriceListSection } from './PriceList';
 
 function getRandomColor() {
