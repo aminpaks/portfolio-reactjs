@@ -19,7 +19,7 @@ class App extends Component {
       <ThemeProvider>
         <>
           <GlobalStyles />
-          <HashRouter basename={process.env.PUBLIC_URL}>
+          <HashRouter basename="/">
             <Suspense fallback={<div>Loading</div>}>
               <HomePageRoute />
               <Route path="/styleguide" component={StyleGuide} />
