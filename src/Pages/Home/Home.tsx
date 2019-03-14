@@ -4,7 +4,7 @@ import React from 'react';
 import { Section } from 'src/UI-Kits';
 import { HeadTitle } from 'src/+Shared';
 import { MainLayout } from 'src/Layout';
-import { MainSection } from './MainSection/SectionMain';
+import { HomeMainSection } from './Main';
 import { ServicesSection } from './Services';
 import { AboutSection } from './AboutTeam';
 import { PriceListSection } from './PriceList';
@@ -13,10 +13,10 @@ export const HomePage = () => (
   <>
     <HeadTitle title="Home" />
     <MainLayout>
-      <MainSection />
+      <HomeMainSection />
       <ServicesSection />
       <AboutSection />
-      <Section>Placeholder</Section>
+      <Section backgroundTheme="light-gray">Placeholder</Section>
       <PriceListSection />
       <Section>Placeholder</Section>
     </MainLayout>

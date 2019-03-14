@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { StyledHeader, StyledNavLogoContainer, StyledNavLinksContainer } from './Header.styled';
 import { DefaultNavLinks } from './Links';
-import { CollapsePadding } from 'src/+Shared/CollapsePadding';
+import { Section } from 'src/UI-Kits';
 
 export interface HeaderProps {
   logo?: React.ReactElement<any> | null;
@@ -11,13 +11,13 @@ const DefaultLogo = () => <img src="https://brandongaille.com/wp-content/uploads
 
 export const Header: FC<HeaderProps> = ({ logo = <DefaultLogo />, children = <DefaultNavLinks /> }) => (
   <StyledHeader>
-    <CollapsePadding variant="left-s-collapse">
+    <div>
       <div>
-        <CollapsePadding variant="left-l-collapse">
+        <div>
           {logo != null && <StyledNavLogoContainer>{logo}</StyledNavLogoContainer>}
           <StyledNavLinksContainer>{children}</StyledNavLinksContainer>
-        </CollapsePadding>
+        </div>
       </div>
-    </CollapsePadding>
+    </div>
   </StyledHeader>
 );

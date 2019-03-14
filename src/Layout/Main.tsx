@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
+
+import { Header } from 'src/Header';
+import { Footer } from 'src/Footer';
 import { StyledContainer } from './Main.styled';
-import { Header } from 'src/Header/Header';
-import { Footer } from 'src/Footer/Footer';
 
 export const MainLayout: FC<{}> = ({ children }) => (
   <StyledContainer>

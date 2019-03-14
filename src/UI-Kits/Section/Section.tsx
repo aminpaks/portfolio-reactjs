@@ -3,12 +3,16 @@ import { StyledSection } from './Section.styled';
 
 export interface SectionProps {
   style?: CSSProperties;
-  variant?: 'default' | 'fluid';
-  backgroundTheme?: 'default' | 'accent' | 'light-gray';
+  variant?: 'default' | 'fluid' | 'left-round' | 'right-round';
+  backgroundTheme?: 'default' | 'accent' | 'light-gray' | [string, string];
 }
 
 export const Section: FC<SectionProps> = ({ variant, backgroundTheme, style, children }) => (
   <StyledSection variant={variant} backgroundTheme={backgroundTheme} style={style}>
-    <div>{children}</div>
+    <div>
+      <div>
+        <div>{children}</div>
+      </div>
+    </div>
   </StyledSection>
 );

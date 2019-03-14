@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import colorUtils from 'color';
-import { mediaQuery } from 'src/Device';
+import styled, { whiten, WithThemeProps, ThemeProps, ViewBreakpoints } from 'src/Theme';
 
-const tempPrimaryColor = '#5f67df';
 const navLinksSeparatorWidth = '1px';
 
-export const StyledHeader = styled.div`
+const getBreakpoint = (breakpoint: keyof ViewBreakpoints, normalize = 1) => (props: ThemeProps) =>
+  props.theme.breakpoints[breakpoint] * normalize + 'px';
+
+export const StyledHeader = styled.nav`
   top: 0;
   left: 0;
   right: 0;
@@ -13,22 +13,49 @@ export const StyledHeader = styled.div`
   position: fixed;
   z-index: 1000;
 
-  > div > div {
-    height: 74px; /* header inner height */
-    display: flex;
-    position: relative;
-
-    background: ${props => props.theme.colorSet.secondary};
-    border-bottom: 1px solid
-      ${props =>
-        colorUtils(props.theme.colorSet.secondary)
-          .whiten(0.5)
-          .hex()
-          .toString()};
+  @media screen and (min-width: ${getBreakpoint('xxl')}) {
+    left: 6%;
   }
 
-  > div > div > div {
-    display: flex;
+  > div {
+    position: relative;
+
+    &::before {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: ${props => props.theme.colorSet.secondary};
+      border-bottom: 1px solid ${props => whiten(props.theme.colorSet.secondary, 0.3)};
+    }
+
+    > div {
+      @media screen and (min-width: ${getBreakpoint('xxl')}) {
+        margin-left: -6%;
+      }
+
+      > div {
+        padding-top: 1.857em;
+        padding-bottom: 1.857em;
+
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+
+        @media screen and (min-width: ${getBreakpoint('lg')}) {
+          width: calc(${getBreakpoint('lg')} - 4.8rem);
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 2.4rem;
+          padding-right: 2.4rem;
+        }
+        @media screen and (min-width: ${getBreakpoint('xl')}) {
+          width: calc(${getBreakpoint('xl')} - 4.8rem);
+        }
+      }
+    }
   }
 `;
 
@@ -38,6 +65,7 @@ export const StyledNavLogoContainer = styled.div`
 
   img {
     height: 60px;
+    margin-right: 1.857em;
   }
 `;
 
@@ -45,19 +73,22 @@ export const StyledNavLinksContainer = styled.div`
   display: flex;
   flex: 1 0 auto;
   align-items: center;
-  margin-left: 1em;
 
   a {
     color: ${props => props.theme.colorSet.textInverted};
     flex: 0 0 auto;
     padding: 0 0.6em;
-    margin-left: calc(1em + ${navLinksSeparatorWidth});
-    margin-right: 1em;
     display: block;
     position: relative;
 
+    &:not(:first-child) {
+      margin-left: calc(1em + ${navLinksSeparatorWidth});
+    }
+
     &:not(:last-child) {
-      &:after {
+      margin-right: 1em;
+
+      &::after {
         top: 50%;
         right: calc(-1em - ${navLinksSeparatorWidth});
         width: ${navLinksSeparatorWidth};
