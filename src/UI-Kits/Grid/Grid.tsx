@@ -1,19 +1,18 @@
-import React, { FC, useCallback, useMemo, useState, useEffect } from 'react';
-import { StyledGridContainer } from './Grid.styled';
+import React, { FC, ReactElement } from 'react';
+
+import { isChildTypeOf } from '../Utils';
 import { Column, PGridColumnProps } from './Column';
+import { StyledGridContainer } from './Grid.styled';
 
 export interface GridProps {
   gutter: number;
   unit: string;
+  children: ReactElement<PGridColumnProps> | Array<ReactElement<PGridColumnProps> | null> | null;
 }
 
 export type PGridProps = Partial<GridProps>;
 
-export const Grid: FC<PGridProps> & { Col: typeof Column } = ({
-  gutter = 2,
-  unit = 'em',
-  children,
-}) => {
+export const Grid: FC<PGridProps> & { Col: typeof Column } = ({ gutter = 2, unit = 'em', children }) => {
   // Calculate all the children's sizes in an array
   const allSizes: (number | null)[] = [];
   React.Children.forEach(children, child => {
@@ -25,11 +24,11 @@ export const Grid: FC<PGridProps> & { Col: typeof Column } = ({
   });
   // Map all the children with total sizes
   const updatedChildren = React.Children.map(children, child =>
-    React.isValidElement<PGridColumnProps>(child)
-      ? React.cloneElement<PGridColumnProps>(child, {
+    isChildTypeOf(Column, child)
+      ? React.cloneElement(child, {
           allSizes,
         })
-      : child,
+      : null,
   );
 
   return (
