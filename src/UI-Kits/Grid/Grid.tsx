@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from 'react';
+import React, { FC, ReactElement, Children } from 'react';
 
 import { isChildTypeOf } from '../Utils';
 import { Column, PGridColumnProps } from './Column';
@@ -15,15 +15,15 @@ export type PGridProps = Partial<GridProps>;
 export const Grid: FC<PGridProps> & { Col: typeof Column } = ({ gutter = 2, unit = 'em', children }) => {
   // Calculate all the children's sizes in an array
   const allSizes: (number | null)[] = [];
-  React.Children.forEach(children, child => {
-    if (React.isValidElement<PGridColumnProps>(child)) {
+  Children.forEach(children, child => {
+    if (isChildTypeOf(Column, child)) {
       allSizes.push(child.props.size || null);
     } else {
       allSizes.push(null);
     }
   });
-  // Map all the children with total sizes
-  const updatedChildren = React.Children.map(children, child =>
+  // Clone all the children with total sizes as prop
+  const updatedChildren = Children.map(children, child =>
     isChildTypeOf(Column, child)
       ? React.cloneElement(child, {
           allSizes,

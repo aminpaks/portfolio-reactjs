@@ -2,7 +2,6 @@ import styled from 'src/Theme';
 import { StyledGridContainer, StyledGridColumnContainer } from 'src/UI-Kits';
 
 export const StyledGridSystemContainer = styled.div`
-  --primaryColor: ${props => props.theme.colorSet.primary};
   margin: 4em;
 
   ${StyledGridContainer} {

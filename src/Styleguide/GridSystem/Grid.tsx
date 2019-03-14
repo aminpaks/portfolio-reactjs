@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Grid } from 'src/UI-Kits';
 import { HeadTitle } from 'src/+Shared';
 import { StyledGridSystemContainer } from './Grid.styled';
@@ -17,8 +18,8 @@ export const GridSystem = () => (
   <StyledGridSystemContainer>
     <HeadTitle title="Grid System" />
     <p>
-      The grid system is pretty generic and it's based on 12 columns, if you don't set the size
-      property of the col component then it will get equally divided
+      The grid system is pretty generic and it's based on 12 columns, if you don't set the size property of the col
+      component then it will get equally divided
     </p>
     <Grid>
       <Grid.Col>

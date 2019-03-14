@@ -9,6 +9,12 @@ export function isOnlyOneChild<T>(children: ReactElement<T> | ReactElement<T>[])
   return React.Children.count(children) === 1;
 }
 
+/**
+ * Returns true if a JSX element is type of a component
+ *
+ * @param component A (class/function) component constructor
+ * @param child A JSX element
+ */
 export function isChildTypeOf<T>(
   component: ComponentType<T>,
   child: ReactNode,
