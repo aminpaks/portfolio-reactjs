@@ -4,9 +4,7 @@ type StyleState = 'normal' | 'hover' | 'focus';
 
 type ButtonAndThemeProps = PartialButtonProps & ThemeProps;
 
-export const getBackgroundColor = (state: StyleState = 'normal') => (
-  props: ButtonAndThemeProps,
-) => {
+export const getBackgroundColor = (state: StyleState = 'normal') => (props: ButtonAndThemeProps) => {
   const {
     variant,
     theme: { colorSet },
@@ -23,6 +21,8 @@ export const getBackgroundColor = (state: StyleState = 'normal') => (
       case 'gray':
         return colorSet.grayDark;
 
+      case 'light-outline':
+      case 'primary-outline':
       case 'invert-outline':
         return '#fff';
 
@@ -94,7 +94,7 @@ export const getBorderColor = (state: StyleState = 'normal') => (props: ButtonAn
       case 'primary':
       case 'secondary':
       case 'primary-outline':
-        return colorSet.primary;
+        return fade(colorSet.primary, 1);
 
       case 'light-outline':
         return lighten(colorSet.gray, 1);

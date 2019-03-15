@@ -63,10 +63,13 @@ const mapTokenToValue = <T extends string, U extends string>(
   );
 };
 
-export const getTokenValue = <T extends {}>(side: PropertySide, tokenType: TokenType, propName: keyof T) => (
-  props: WithThemeProps<T>,
-) => {
-  const propValue = props[propName] as unknown;
+export const getTokenValue = <T extends {}, U extends string>(
+  side: PropertySide,
+  tokenType: TokenType,
+  propName: keyof T,
+  defaultValue?: CSSShorthandProperty<U>,
+) => (props: WithThemeProps<T>) => {
+  const propValue = (props[propName] as unknown) || defaultValue;
   const tokens = props.theme.tokens[tokenType];
   if (propValue != null) {
     return getValueFromShorthand(side, mapTokenToValue(tokens, propValue as CSSShorthandProperty<string>));

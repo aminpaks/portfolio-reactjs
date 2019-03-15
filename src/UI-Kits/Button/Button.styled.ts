@@ -1,13 +1,8 @@
-import styled from 'src/Theme';
+import styled, { fade } from 'src/Theme';
 import { keyframes } from 'styled-components';
+
 import { PartialButtonProps } from './Button';
-import {
-  getTextColor,
-  getBorderColor,
-  getBackgroundColor,
-  getPaddingValue,
-  getTextSize,
-} from './Util';
+import { getTextColor, getBorderColor, getBackgroundColor, getPaddingValue, getTextSize } from './Util';
 
 const showKeyFrames = keyframes`
   from {
@@ -33,31 +28,43 @@ export const StyledButton = styled.button<PartialButtonProps>`
   font-weight: 600;
   border: 2px solid ${getBorderColor()};
   position: relative;
+  padding: 0;
   display: inline-flex;
-  padding: ${getPaddingValue};
   border-radius: 2em;
   overflow: hidden;
   background-color: ${getBackgroundColor()};
-  outline: none;
+  outline: 1px dotted transparent;
+  outline-offset: -0.01px;
   cursor: pointer;
 
-  &,
-  i,
-  span {
-    transition: 200ms ease-in-out;
+  &::-moz-focus-inner {
+    border: 0;
   }
 
-  i,
-  span {
-    user-select: none;
+  &,
+  .button-child-element-1,
+  .button-child-element-2 {
+    transition: all 200ms ease-in-out, outline 0ms;
+  }
+
+  .button-holder-element {
+    outline: none;
+    display: block;
+    text-decoration: none;
+    padding: ${getPaddingValue};
+  }
+
+  .button-child-element-1,
+  .button-child-element-2 {
+    pointer-events: none;
     font-style: normal;
     white-space: nowrap;
     text-decoration: none;
   }
-  i {
+  .button-child-element-1 {
     clip-path: polygon(0 100%, -35% 0, 0 0, 0 100%);
   }
-  span {
+  .button-child-element-2 {
     top: 0;
     left: 0;
     position: absolute;
@@ -66,11 +73,13 @@ export const StyledButton = styled.button<PartialButtonProps>`
     clip-path: polygon(100% 100%, 100% 0, -35% 0, 0 100%);
   }
 
-  &:focus {
+  &:focus,
+  &:focus-within {
     border-color: ${getBorderColor('focus')};
     background-color: ${getBackgroundColor('focus')};
+    outline-color: ${fade('#000', 0.3)};
 
-    span {
+    .button-child-element-2 {
       color: ${getTextColor('focus')};
     }
   }
@@ -78,17 +87,18 @@ export const StyledButton = styled.button<PartialButtonProps>`
   &:hover {
     border-color: ${getBorderColor('hover')};
     background-color: ${getBackgroundColor('hover')};
+    outline-color: transparent;
 
-    i,
-    span {
+    .button-child-element-1,
+    .button-child-element-2 {
       color: ${getTextColor('hover')};
     }
-    i {
+    .button-child-element-1 {
       animation: ${showKeyFrames} 0.3s;
       animation-fill-mode: forwards;
       animation-delay: 0.2s;
     }
-    span {
+    .button-child-element-2 {
       animation: ${hideKeyFrames} 0.3s;
       animation-fill-mode: forwards;
     }

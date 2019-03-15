@@ -1,6 +1,6 @@
-import React, { Suspense, Component } from 'react';
 import WebFont from 'webfontloader';
-import { HashRouter, Route } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import { HashRouter, Switch, Redirect } from 'react-router-dom';
 
 import { GlobalStyles } from './App.styled';
 import { HomePageRoute } from './Pages';
@@ -13,22 +13,17 @@ WebFont.load({
   },
 });
 
-class App extends Component {
-  render() {
-    return (
-      <ThemeProvider>
-        <>
-          <GlobalStyles />
-          <HashRouter basename="/">
-            <Suspense fallback={<div>Loading</div>}>
-              <HomePageRoute />
-              <StyleguidePageRoute />
-            </Suspense>
-          </HashRouter>
-        </>
-      </ThemeProvider>
-    );
-  }
-}
+const App = () => (
+  <ThemeProvider>
+    <>
+      <GlobalStyles />
+      <HashRouter basename="/">
+        <Suspense fallback={<div>Loading</div>}>
+          <Switch>{[HomePageRoute, StyleguidePageRoute, <Redirect key="redirect-to-home" to="/" />]}</Switch>
+        </Suspense>
+      </HashRouter>
+    </>
+  </ThemeProvider>
+);
 
 export default App;
