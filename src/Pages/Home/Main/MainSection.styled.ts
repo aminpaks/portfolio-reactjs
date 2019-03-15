@@ -1,20 +1,38 @@
-import styled from 'styled-components';
-import { mediaQuery } from 'src/Device';
+import styled from 'src/Theme';
 
-export const StyledMainSectionContainer = styled.div`
-  height: 620px;
+export const StyledDevelopment = styled.div`
+  position: relative;
+  line-height: 1;
 
-  div {
-    background: ${props => props.theme.colorSet.secondary};
-    border-bottom-left-radius: 80px;
-    border-bottom-right-radius: 80px;
-    height: 100%;
+  &,
+  b {
+    &::before {
+      width: 2.143rem;
+      height: 0.286rem;
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+    }
   }
 
-  ${mediaQuery.tabletPortraitMin} {
-    div {
-      border-bottom-right-radius: 0px;
-      border-bottom-left-radius: 120px;
+  div {
+    display: inline-block;
+  }
+  b,
+  span {
+    display: block;
+  }
+  b {
+    font-size: 4.5em;
+
+    &::before {
+      margin-left: -2.143rem;
+      margin-right: 1.4rem;
+      background-color: ${props => props.theme.colorSet.primary};
     }
+  }
+  span {
+    margin-left: 1.4rem;
+    letter-spacing: -0.214rem;
   }
 `;
