@@ -9,9 +9,13 @@ const defaultSpacingValue: CSSShorthandProperty<SpacingToken> = ['xs'];
 export const StyledButtonGroup = styled.div<ButtonGroupProps>`
   ${StyledButton} {
     margin-top: ${getTokenValue('top', 'spacing', 'spacing', defaultSpacingValue)};
-    margin-right: ${getTokenValue('right', 'spacing', 'spacing', defaultSpacingValue)};
     margin-bottom: ${getTokenValue('bottom', 'spacing', 'spacing', defaultSpacingValue)};
-    margin-left: ${getTokenValue('left', 'spacing', 'spacing', defaultSpacingValue)};
+    &:not(:first-of-type) {
+      margin-left: ${getTokenValue('left', 'spacing', 'spacing', defaultSpacingValue)};
+    }
+    &:not(:last-of-type) {
+      margin-right: ${getTokenValue('right', 'spacing', 'spacing', defaultSpacingValue)};
+    }
   }
 `;
 

@@ -1,8 +1,11 @@
-import React, { FC, useContext } from 'react';
+import React, { FC, useContext, lazy } from 'react';
+import { importMDX } from 'mdx.macro';
 
 import { ThemeContext, darken } from 'src/Theme';
-import { Section, Typography, Spacing, Grid } from 'src/UI-Kits';
+import { Section, Grid } from 'src/UI-Kits';
 import { StyledDevelopment } from './MainSection.styled';
+
+const Content = lazy(() => importMDX('./Content.mdx'));
 
 export const HomeMainSection: FC = () => {
   const {
@@ -14,20 +17,11 @@ export const HomeMainSection: FC = () => {
       <Grid>
         <Grid.Col>
           <StyledDevelopment>
-            <div>
-              <Typography variant="title" text="web app" component="b" />
-              <Typography variant="title" text="development" style={{ fontWeight: 300 }} component="span" />
-            </div>
+            <Content />
           </StyledDevelopment>
-          <Spacing margin={['md', 'auto', 'auto']}>
-            <Typography variant="body" style={{ fontSize: '1.2em', opacity: 0.6 }}>
-              We provide extensive web app development services for individual and corporate clients. Feel free to check
-              out our portfolio for demos.
-            </Typography>
-          </Spacing>
         </Grid.Col>
-        <Grid.Col style={{ border: '1px solid #fff' }}>
-          <span>Website Demo</span>
+        <Grid.Col>
+          <span>Web & UI Demo</span>
         </Grid.Col>
       </Grid>
     </Section>
