@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "mikestead.dotenv",
+    "eamodio.gitlens",
+    "silvenon.mdx",
+    "esbenp.prettier-vscode",
+    "rbbit.typescript-hero",
+    "jpoissonnier.vscode-styled-components",
+    "stevencl.adddoccomments",
+    "bierner.color-info",
+    "naumovs.color-highlight",
+    "tombonnike.vscode-status-bar-format-toggle"
+  ],
+  "unwantedRecommendations": [
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "dbaeumer.jshint",
+    "ms-azuretools.vscode-azureappservice",
+    "azuredevspaces.azds"
+  ]
+}
