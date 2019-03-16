@@ -1,6 +1,7 @@
-import { WithThemeProps, lighten, mixWith, shouldUseDarkForeground } from 'src/Theme';
+import { WithThemeProps, lighten, mixWith, shouldUseDarkForeground, fade } from 'src/Theme';
 
 import { SectionProps } from './Section';
+import { StyledButton } from '../Button/Button.styled';
 import { StyledPanel } from '../Panel/Panel.styled';
 import { StyledTypography } from '../Typography/Typography.styled';
 
@@ -149,6 +150,11 @@ ${StyledTypography}[data-variant="body"] {
 }
 ${StyledPanel} ${StyledTypography}[data-variant="body"] {
   font-weight: 400;
+}
+${StyledButton} {
+  &:focus:not(:hover),:focus-within:not(:hover) {
+    outline-color: ${fade('#fff', 0.4)};
+  }
 }`;
   }
 
