@@ -1,15 +1,16 @@
 import { Typography, Spacing, Button } from 'src/UI-Kits';
 
 <div className="main-section">
-  <div>
+  <h1>
     <Typography variant="title" text="web & ui" component="b" />
-    <Typography variant="title" text="development" style={{ fontWeight: 300 }} component="span" />
-  </div>
+    <Typography variant="title" text="developer" component="span" />
+  </h1>
 </div>
 <Spacing margin={['md', 'auto', 'auto']}>
-  <Typography variant="body" style={{ fontSize: '1.2em', opacity: 0.6 }}>
-    I've been working on Web & UI development for a quite sometimes. Building reusable and composable components
-    for UI is something that I enjoy building. Feel free to take a look at my GitHub account for more examples
+  <Typography variant="body" className="main-section-paragraph">
+    I'm an experienced Web & UI developer and been working in the field for quite sometime. I enjoy building
+    reusable and composable components for user interfaces. Feel free to take a look at my GitHub profile for
+    some of my works.
   </Typography>
 </Spacing>
 
@@ -18,7 +19,7 @@ import { Typography, Spacing, Button } from 'src/UI-Kits';
     <Button variant="invert-outline" text="Fork this project on GitHub">
       <a href="https://github.com/aminpaks/portfolio-reactjs" />
     </Button>
-    <Button text="My profile">
+    <Button text="GitHub profile">
       <a href="https://github.com/aminpaks" />
     </Button>
   </Button.Group>

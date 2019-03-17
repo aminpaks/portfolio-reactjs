@@ -13,7 +13,8 @@ export const StyledDevelopment = styled.div`
       }
     }
 
-    > div {
+    > h1 {
+      margin: 0;
       line-height: 1;
       position: relative;
       display: inline-block;
@@ -23,7 +24,8 @@ export const StyledDevelopment = styled.div`
         display: block;
       }
       b {
-        font-size: 4.5em;
+        font-size: 4.5rem;
+        letter-spacing: -0.2rem;
 
         &::before {
           margin-left: -2.143rem;
@@ -32,9 +34,15 @@ export const StyledDevelopment = styled.div`
         }
       }
       span {
+        font-size: 3.6rem;
+        font-weight: 300;
         margin-left: 1.4rem;
-        letter-spacing: -0.214rem;
+        letter-spacing: 0.14rem;
       }
     }
+  }
+  .main-section-paragraph {
+    font-size: 1.2rem;
+    opacity: 0.6;
   }
 `;
