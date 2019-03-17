@@ -1,4 +1,5 @@
 import styled, { darken } from 'src/Theme';
+
 import { TypographyComponent } from './Typography';
 import { getColor, getCursor, getFontSize, getFontWeight } from './Util';
 

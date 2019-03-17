@@ -1,9 +1,8 @@
-import { ThemeProps } from 'src/Theme';
+import { WithThemeProps } from 'src/Theme';
+
 import { TypographyProps } from './Typography';
 
-type TypographyThemeProps = TypographyProps & ThemeProps;
-
-export const getColor = ({ colorTheme, theme: { colorSet } }: TypographyThemeProps) => {
+export const getColor = ({ colorTheme, theme: { colorSet } }: WithThemeProps<TypographyProps>) => {
   switch (colorTheme) {
     case 'default':
       return colorSet.text;
@@ -16,7 +15,7 @@ export const getColor = ({ colorTheme, theme: { colorSet } }: TypographyThemePro
   }
 };
 
-export const getFontSize = (props: TypographyProps) => {
+export const getFontSize = (props: WithThemeProps<TypographyProps>) => {
   switch (props.variant) {
     case 'title':
       return '3.4em';
@@ -31,7 +30,7 @@ export const getFontSize = (props: TypographyProps) => {
   }
 };
 
-export const getFontWeight = (props: TypographyProps) => {
+export const getFontWeight = (props: WithThemeProps<TypographyProps>) => {
   switch (props.variant) {
     case 'title':
       return '700';
@@ -45,7 +44,7 @@ export const getFontWeight = (props: TypographyProps) => {
   }
 };
 
-export const getCursor = (props: TypographyThemeProps) => {
+export const getCursor = (props: WithThemeProps<TypographyProps>) => {
   switch (props.variant) {
     case 'title':
     case 'headline':

@@ -1,0 +1,26 @@
+import { Typography, Spacing, Button } from 'src/UI-Kits';
+
+<div className="main-section">
+  <h1>
+    <Typography variant="title" text="Amin Pakseresht" component="b" />
+    <Typography variant="title" text="web & ui developer" component="span" />
+  </h1>
+</div>
+<Spacing margin={['md', 'auto', 'auto']}>
+  <Typography variant="body" className="main-section-paragraph">
+    I'm an experienced Web & UI developer and been working in the field for quite sometime. I enjoy building
+    reusable and composable components for user interfaces. Feel free to take a look at my GitHub profile for
+    some of my works.
+  </Typography>
+</Spacing>
+
+<Spacing margin={['md', 'auto', 'auto']}>
+  <Button.Group>
+    <Button variant="invert-outline" text="Fork this project on GitHub">
+      <a href="https://github.com/aminpaks/portfolio-reactjs" />
+    </Button>
+    <Button text="GitHub profile">
+      <a href="https://github.com/aminpaks" />
+    </Button>
+  </Button.Group>
+</Spacing>

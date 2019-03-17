@@ -1,7 +1,12 @@
-import React, { FC, useContext } from 'react';
+import { importMDX } from 'mdx.macro';
+import React, { FC, lazy, useContext } from 'react';
+import { darken, ThemeContext } from 'src/Theme';
+import { Grid, Section } from 'src/UI-Kits';
 
-import { ThemeContext, darken } from 'src/Theme';
-import { Section } from 'src/UI-Kits';
+import { UIDemos } from './Demos';
+import { StyledDevelopment } from './MainSection.styled';
+
+const Content = lazy(() => importMDX('./Content.mdx'));
 
 export const HomeMainSection: FC = () => {
   const {
@@ -10,7 +15,16 @@ export const HomeMainSection: FC = () => {
 
   return (
     <Section variant="left-round" backgroundTheme={[darken(secondary, 0.08), secondary]}>
-      <div style={{ lineHeight: '33em' }}>Main</div>
+      <Grid>
+        <Grid.Col size={8}>
+          <StyledDevelopment>
+            <Content />
+          </StyledDevelopment>
+        </Grid.Col>
+        <Grid.Col>
+          <UIDemos />
+        </Grid.Col>
+      </Grid>
     </Section>
   );
 };
