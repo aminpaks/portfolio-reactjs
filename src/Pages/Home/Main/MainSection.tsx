@@ -4,6 +4,7 @@ import { importMDX } from 'mdx.macro';
 import { ThemeContext, darken } from 'src/Theme';
 import { Section, Grid } from 'src/UI-Kits';
 import { StyledDevelopment } from './MainSection.styled';
+import { UIDemos } from './Mobile';
 
 const Content = lazy(() => importMDX('./Content.mdx'));
 
@@ -21,7 +22,7 @@ export const HomeMainSection: FC = () => {
           </StyledDevelopment>
         </Grid.Col>
         <Grid.Col>
-          <span>Web & UI Demo</span>
+          <UIDemos />
         </Grid.Col>
       </Grid>
     </Section>
