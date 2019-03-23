@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid should render Grid with Columns 1`] = `
+.c2 {
+  display: block;
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.c2:last-of-type {
+  margin-left: auto;
+}
+
+.c3 {
+  display: block;
+  box-sizing: border-box;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  -webkit-flex-basis: auto;
+  -ms-flex-preferred-size: auto;
+  flex-basis: auto;
+  max-width: auto;
+}
+
+.c3:last-of-type {
+  margin-left: auto;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  box-sizing: border-box;
+  margin-left: -1.14rem;
+  margin-right: -1.14rem;
+}
+
+.c0 .c1 {
+  padding-left: 1.14rem;
+  padding-right: 1.14rem;
+}
+
+@media (min-width:576px) {
+  .c2 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width:992px) {
+  .c2 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width:1200px) {
+  .c2 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width:576px) {
+  .c3 {
+    -webkit-flex-basis: NaN%;
+    -ms-flex-preferred-size: NaN%;
+    flex-basis: NaN%;
+    max-width: NaN%;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width:992px) {
+  .c3 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+@media (min-width:1200px) {
+  .c3 {
+    -webkit-flex-basis: 25%;
+    -ms-flex-preferred-size: 25%;
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1 c2"
+    data-testid="uikits-grid-column"
+    size={
+      Object {
+        "lg": null,
+        "md": 3,
+        "size": null,
+        "sm": 6,
+        "xl": null,
+        "xs": null,
+        "xxl": null,
+      }
+    }
+  >
+    column1
+  </div>
+  <div
+    className="c1 c2"
+    data-testid="uikits-grid-column"
+    size={
+      Object {
+        "lg": null,
+        "md": 3,
+        "size": null,
+        "sm": 6,
+        "xl": null,
+        "xs": null,
+        "xxl": null,
+      }
+    }
+  >
+    column2
+  </div>
+  <div
+    className="c1 c3"
+    data-testid="uikits-grid-column"
+  >
+    column3
+  </div>
+  <div
+    className="c1 c3"
+    data-testid="uikits-grid-column"
+  >
+    column4
+  </div>
+</div>
+`;

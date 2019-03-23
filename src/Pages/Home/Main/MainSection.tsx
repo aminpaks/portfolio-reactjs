@@ -16,7 +16,7 @@ export const HomeMainSection: FC = () => {
   return (
     <Section variant="left-round" backgroundTheme={[darken(secondary, 0.08), secondary]}>
       <Grid>
-        <Grid.Col size={8}>
+        <Grid.Col>
           <StyledDevelopment>
             <Content />
           </StyledDevelopment>

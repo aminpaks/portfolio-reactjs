@@ -2,13 +2,17 @@ import styled from 'src/Theme';
 import { StyledGridContainer, StyledGridColumnContainer } from 'src/UI-Kits';
 
 export const StyledGridSystemContainer = styled.div`
-  margin: 4em;
+  margin: 0 2em;
+  @media (min-width: ${props => props.theme.breakpoints.xl}px) {
+    margin: 0 8em;
+  }
 
   ${StyledGridContainer} {
     margin-bottom: 2em;
   }
   ${StyledGridColumnContainer} {
     position: relative;
+    margin-bottom: 1em;
 
     &:before {
       top: 0;
@@ -29,5 +33,18 @@ export const StyledGridSystemContainer = styled.div`
 
   p {
     text-align: justify;
+    margin-bottom: 0;
+  }
+
+  section > div {
+    padding: 1em 0;
+  }
+
+  ul {
+    margin-bottom: 1em;
+
+    > li {
+      margin-bottom: 0.6em;
+    }
   }
 `;

@@ -1,43 +1,35 @@
-import React, { FC, ReactElement, Children } from 'react';
+import React, { Children, FC, ReactElement } from 'react';
 
 import { isElementTypeOf } from '../Utils';
-import { Column, PGridColumnProps } from './Column';
+import { Column, GridColumnProps, InternalGridColumnProps, ColumnGroupSize } from './Column';
 import { StyledGridContainer } from './Grid.styled';
+import { getSizes, getSizesAsArray } from './Util';
+import { GridProps } from './types';
 
-export interface GridProps {
-  gutter: number;
-  unit: string;
-  children: ReactElement<PGridColumnProps> | Array<ReactElement<PGridColumnProps> | null> | null;
-}
-
-export type PGridProps = Partial<GridProps>;
-
-export const Grid: FC<PGridProps> & { Col: FC<PGridColumnProps> } = ({ gutter = 2, unit = 'em', children }) => {
+export const Grid: FC<GridProps> & { Col: FC<GridColumnProps> } = ({ gutter, children }) => {
   // Calculate all the children's sizes in an array
-  const allSizes: (number | null)[] = [];
-  Children.forEach<any>(children, (child: ReactElement<PGridColumnProps>) => {
+  const sizes = [] as ColumnGroupSize[];
+  Children.forEach<any>(children, (child: ReactElement<GridColumnProps>) => {
     if (isElementTypeOf(Column, child)) {
-      allSizes.push(child.props.size || null);
-    } else {
-      allSizes.push(null);
+      const currentSize = getSizes(child.props);
+      sizes.push(currentSize);
     }
   });
+  const childrenCount = sizes.length;
+  const allColumnSizes = getSizesAsArray(childrenCount, sizes);
   // Clone all the children with total sizes as prop
-  const updatedChildren = Children.map<ReactElement<PGridColumnProps> | null, any>(
+  const updatedChildren = Children.map<ReactElement<InternalGridColumnProps> | null, any>(
     children,
-    (child: ReactElement<PGridColumnProps>) =>
+    (child: ReactElement<InternalGridColumnProps>, index) =>
       isElementTypeOf(Column, child)
         ? React.cloneElement(child, {
-            allSizes,
+            size: sizes[index],
+            allColumnSizes,
           })
         : null,
   );
 
-  return (
-    <StyledGridContainer gutter={gutter} unit={unit}>
-      {updatedChildren}
-    </StyledGridContainer>
-  );
+  return <StyledGridContainer gutter={gutter}>{updatedChildren}</StyledGridContainer>;
 };
 // Static property
-Grid.Col = Column;
+Grid.Col = Column as any;

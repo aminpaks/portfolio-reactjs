@@ -15,9 +15,20 @@ export interface ColorSet {
   success: string;
 }
 
+export interface ViewBreakpoints {
+  xs: number;
+  sm: number;
+  md: number;
+  lg: number;
+  xl: number;
+  xxl: number;
+}
+
+export type ViewBreakpoint = keyof ViewBreakpoints;
+
 export type PropertySide = 'top' | 'right' | 'bottom' | 'left';
 
-export type SpacingToken = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'auto' | '0';
+export type SpacingToken = ViewBreakpoint | 'auto' | '0';
 
 export type CSSShorthandProperty<T extends string> = [T, T?, T?, T?];
 
@@ -43,15 +54,6 @@ export type TokenType = keyof Tokens;
 export interface FontSet {
   primary: string;
   secondary: string;
-}
-
-export interface ViewBreakpoints {
-  xs: number;
-  sm: number;
-  md: number;
-  lg: number;
-  xl: number;
-  xxl: number;
 }
 
 export interface Theme {

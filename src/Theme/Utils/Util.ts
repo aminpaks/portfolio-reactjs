@@ -76,3 +76,29 @@ export const getTokenValue = <T extends {}, U extends string>(
   }
   return null;
 };
+
+export const getNormalizedTokenValue = <T, TokenKey extends string>({
+  tokenType,
+  propName,
+  normalize,
+  defaultTokenKey,
+}: {
+  tokenType: TokenType;
+  propName: Extract<keyof T, string>;
+  normalize?: number;
+  defaultTokenKey?: TokenKey;
+}) => (props: WithThemeProps<T>) => {
+  const tokenKey = (props[propName] as unknown) || defaultTokenKey;
+  const tokens = props.theme.tokens[tokenType];
+  if (tokenKey != null) {
+    const potentialValue = tokens[tokenKey as string];
+
+    if (potentialValue) {
+      const { value, unit } = parseCSSValue(potentialValue);
+      const computedValue = (value * (normalize || 1)).toFixed(2).replace(/\.00$/, '');
+
+      return computedValue === '0' ? '0' : computedValue + unit;
+    }
+  }
+  return null;
+};

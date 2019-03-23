@@ -1,11 +1,7 @@
-import styled from 'src/Theme';
-import { GridProps } from './Grid';
-import { StyledGridColumnContainer } from './Column.styled';
+import styled, { getPropValue, getNormalizedTokenValue, SpacingToken } from 'src/Theme';
 
-const getGutterValue = ({ gutter, unit }: GridProps) => {
-  const halfValue = gutter / 2;
-  return Number.isNaN(halfValue) ? undefined : halfValue + unit;
-};
+import { StyledGridColumnContainer } from './Column/Column.styled';
+import { GridProps } from './types';
 
 export const StyledGridContainer = styled.div<GridProps>`
   display: flex;
@@ -13,11 +9,31 @@ export const StyledGridContainer = styled.div<GridProps>`
   flex-wrap: wrap;
   flex-direction: row;
   box-sizing: border-box;
-  margin-left: -${getGutterValue};
-  margin-right: -${getGutterValue};
+  margin-left: ${getNormalizedTokenValue<GridProps, SpacingToken>({
+    propName: 'gutter',
+    tokenType: 'spacing',
+    normalize: -0.2,
+    defaultTokenKey: 'xxl',
+  })};
+  margin-right: ${getNormalizedTokenValue<GridProps, SpacingToken>({
+    propName: 'gutter',
+    tokenType: 'spacing',
+    normalize: -0.2,
+    defaultTokenKey: 'xxl',
+  })};
 
   ${StyledGridColumnContainer} {
-    padding-left: ${getGutterValue};
-    padding-right: ${getGutterValue};
+    padding-left: ${getNormalizedTokenValue<GridProps, SpacingToken>({
+      propName: 'gutter',
+      tokenType: 'spacing',
+      normalize: 0.2,
+      defaultTokenKey: 'xxl',
+    })};
+    padding-right: ${getNormalizedTokenValue<GridProps, SpacingToken>({
+      propName: 'gutter',
+      tokenType: 'spacing',
+      normalize: 0.2,
+      defaultTokenKey: 'xxl',
+    })};
   }
 `;
