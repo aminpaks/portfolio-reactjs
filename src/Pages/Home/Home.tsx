@@ -3,7 +3,7 @@ import { HeadTitle } from 'src/+Shared';
 import { MainLayout } from 'src/Layout';
 import { Section } from 'src/UI-Kits';
 
-import { AboutSection } from './AboutTeam';
+import { HomeAboutSection } from './About';
 import { HomeExpertiseSection } from './Expertise';
 import { HomeMainSection } from './Main';
 import { PriceListSection } from './PriceList';
@@ -14,7 +14,7 @@ export const HomePage = () => (
     <MainLayout>
       <HomeMainSection />
       <HomeExpertiseSection />
-      <AboutSection />
+      <HomeAboutSection />
       <Section backgroundTheme="light-gray">Placeholder</Section>
       <PriceListSection />
       <Section>Placeholder</Section>

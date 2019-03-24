@@ -29,13 +29,13 @@ export const buildVariants = (props: WithThemeProps<PanelProps>) => {
     `;
   } else if (props.variant === 'overlay-bottom') {
     return `
-      position: absolute;
-      margin: 0 auto;
-      max-width: 72em;
-      right: 0;
-      left: 0;
-      bottom: -5em;
-      z-index: 2;
-    `;
+        position: absolute;
+        margin: 0 auto;
+        max-width: 72em;
+        right: 0;
+        left: 0;
+        bottom: -5em;
+        z-index: 2;
+      `;
   }
 };

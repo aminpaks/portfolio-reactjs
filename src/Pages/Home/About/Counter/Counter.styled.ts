@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'src/Theme';
 
 export const StyledCounter = styled.div`
   display: flex;
@@ -16,9 +16,6 @@ export const StyledCounter = styled.div`
 `;
 
 export const CounterWrapper = styled.div`
-  height: 9em;
-  background-color: #fff;
-  // padding: 5em 0em;
   font-size: 1.57em;
 
   span {

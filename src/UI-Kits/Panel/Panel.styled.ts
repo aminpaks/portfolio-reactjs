@@ -1,6 +1,7 @@
 import styled, { fade } from 'src/Theme';
-import { getPaddingValue, buildVariants } from './Util';
+
 import { PanelComponent } from './Panel';
+import { buildVariants, getPaddingValue } from './Util';
 
 export const StyledPanel = styled(PanelComponent)`
   display: block;
