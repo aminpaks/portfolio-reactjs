@@ -3,20 +3,18 @@ import { HeadTitle } from 'src/+Shared';
 import { MainLayout } from 'src/Layout';
 import { Section } from 'src/UI-Kits';
 
-import { AboutSection } from './AboutTeam';
-import { ExpertiseSection } from './Expertise';
+import { HomeAboutSection } from './About';
+import { HomeExpertiseSection } from './Expertise';
 import { HomeMainSection } from './Main';
-import { PriceListSection } from './PriceList';
 
 export const HomePage = () => (
   <>
     <HeadTitle title="Home" />
+
     <MainLayout>
       <HomeMainSection />
-      <ExpertiseSection />
-      <AboutSection />
-      <Section backgroundTheme="light-gray">Placeholder</Section>
-      <PriceListSection />
+      <HomeExpertiseSection />
+      <HomeAboutSection />
       <Section>Placeholder</Section>
     </MainLayout>
   </>

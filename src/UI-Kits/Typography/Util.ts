@@ -18,13 +18,13 @@ export const getColor = ({ colorTheme, theme: { colorSet } }: WithThemeProps<Typ
 export const getFontSize = (props: WithThemeProps<TypographyProps>) => {
   switch (props.variant) {
     case 'title':
-      return '3.4em';
+      return '3.4rem';
     case 'headline':
-      return '2.6em';
+      return '2.643rem';
     case 'subheading':
-      return '1.4em';
+      return '1.428569rem';
     case 'body':
-      return '1em';
+      return '1.07143rem';
     default:
       return 'inherit';
   }

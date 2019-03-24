@@ -85,7 +85,7 @@ export const useTypewriter = (texts: string[]) => {
           dispatchIn(dispatch, 2800, { type: Actions.Erasing }, state.cancelId);
         } else {
           // Writing current text
-          const nextTickIn = charIndex < 3 ? 180 : Math.random() * 80 + 60;
+          const nextTickIn = charIndex < 2 ? 180 : Math.random() * 40 + 60;
           dispatchIn(dispatch, nextTickIn, { type: Actions.Write }, state.cancelId);
         }
         break;
