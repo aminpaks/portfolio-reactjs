@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef, FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
+import { Typography } from 'src/UI-Kits';
 
 export interface CountProps {
   initialCount: number;
@@ -6,7 +7,7 @@ export interface CountProps {
   delay: number;
 }
 
-export function Count(props: CountProps) {
+export const HomeAboutCounter: FC<CountProps> = props => {
   const [count, setCount] = useState(props.initialCount);
 
   useInterval(
@@ -16,8 +17,8 @@ export function Count(props: CountProps) {
     count > props.limit ? null : props.delay,
   );
 
-  return <span>{count}</span>;
-}
+  return <Typography variant="subheading">{count}</Typography>;
+};
 
 function useInterval(callback: () => void, delay: any) {
   const f = () => {};

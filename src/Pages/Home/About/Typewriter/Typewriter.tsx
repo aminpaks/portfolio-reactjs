@@ -15,7 +15,7 @@ export const Typewriter: FC<TypewriterProps> = ({ prefix = '', textSeries }) => 
   return (
     <StyledTypewriterContainer>
       <Spacing margin={['xs', 'md', 'lg']}>
-        <Typography variant="headline" component="h2" style={{ textTransform: 'capitalize' }}>
+        <Typography variant="headline" component="h2">
           {prefix ? prefix + ' ' : null}
           <span>{text}</span>
           <b />
