@@ -16,12 +16,12 @@ export const HomeMainSection: FC = () => {
   return (
     <Section variant="left-round" backgroundTheme={[darken(secondary, 0.08), secondary]}>
       <Grid>
-        <Grid.Col>
+        <Grid.Col xs={12} xl={8}>
           <StyledDevelopment>
             <Content />
           </StyledDevelopment>
         </Grid.Col>
-        <Grid.Col>
+        <Grid.Col xs={0} xl={4}>
           <UIDemos />
         </Grid.Col>
       </Grid>

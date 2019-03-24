@@ -5,6 +5,10 @@ export const StyledDemoContainer = styled.div`
   position: relative;
   pointer-events: none;
 
+  @media screen and (max-width: ${props => props.theme.breakpoints.xl}px) {
+    transform: scale(0.8) translateY(3rem);
+  }
+
   .iphone-frame {
     width: 50rem;
     margin: -9rem 0 0 -13rem;
