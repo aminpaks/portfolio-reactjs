@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { Section, Spacing, Typography } from 'src/UI-Kits';
 
-import { HomeAboutCounters } from './Counters';
 import { Typewriter } from './Typewriter';
 
 export const HomeAboutSection: FC = () => {
@@ -11,12 +10,11 @@ export const HomeAboutSection: FC = () => {
       <Typewriter
         prefix="Skilled in"
         textSeries={[
-          'HTML',
-          'CSS',
           'JavaScript',
           'TypeScript',
           'React',
           'Angular',
+          'Jest',
           'Webpack',
           'Node.js',
           'Redux',
@@ -28,16 +26,20 @@ export const HomeAboutSection: FC = () => {
         ]}
       />
 
-      <Spacing margin={['sm', 'auto', 'md']}>
+      <Spacing margin={['sm', 'auto', 'auto']}>
         <Typography variant="body" style={{ maxWidth: '48em' }}>
-          Over the years that I've been working and building user interfaces I acquired a set of skills and learnt
-          working with different tools. Reacting programming is one of the most enjoyable/useful topics that in my
-          opinion is very underrated in Frontend. In my opinion <strong>React</strong> has adopted reactive programming
-          with a different approach and quite honestly not many developers realize this fact.
+          Over the years that I've been working and building user interfaces I acquired a set of skills and learnt while
+          working with different tools. Reacting programming is one of the most fascinating/useful topics that is very
+          underrated in Frontend.
         </Typography>
       </Spacing>
 
-      <HomeAboutCounters />
+      <Spacing margin={['sm', 'auto', 'auto']}>
+        <Typography variant="body" style={{ maxWidth: '48em' }}>
+          In my opinion <mark>React</mark> has adopted reactive programming with a different approach and quite honestly
+          not many developers realize this fact.
+        </Typography>
+      </Spacing>
     </Section>
   );
 };

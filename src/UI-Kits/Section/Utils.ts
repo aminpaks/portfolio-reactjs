@@ -146,6 +146,7 @@ ${StyledPanel} {
   color: ${colorSet.text};
 }
 ${StyledTypography}[data-variant="body"] {
+  font-size: 1.14286rem;
   font-weight: 700;
 }
 ${StyledPanel} ${StyledTypography}[data-variant="body"] {
