@@ -6,5 +6,7 @@ export const StyledAnimatedIcon = styled.div`
 
   .icon {
     margin: 0.2em;
+    user-select: none;
+    pointer-events: none;
   }
 `;
