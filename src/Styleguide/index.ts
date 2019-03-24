@@ -1,1 +1,0 @@
-export { StyleguidePageRoute } from './Route';

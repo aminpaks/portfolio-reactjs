@@ -1,1 +1,0 @@
-export { SpacingsRoute } from './Route';

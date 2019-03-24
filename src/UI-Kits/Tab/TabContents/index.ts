@@ -1,1 +1,0 @@
-export { TabContents } from './TabContents';

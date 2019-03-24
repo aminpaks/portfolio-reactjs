@@ -1,1 +1,0 @@
-export { ButtonsRoute } from './Route';

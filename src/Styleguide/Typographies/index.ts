@@ -1,1 +1,0 @@
-export { TypographiesRoute } from './Route';

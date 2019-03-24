@@ -1,1 +1,0 @@
-export { TabsRoute } from './Route';

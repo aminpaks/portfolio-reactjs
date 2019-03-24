@@ -1,1 +1,0 @@
-export { CarouselsRoute } from './Route';
