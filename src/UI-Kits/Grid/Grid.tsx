@@ -1,14 +1,14 @@
 import React, { Children, FC, ReactElement } from 'react';
 
 import { isElementTypeOf } from '../Utils';
-import { Column, GridColumnProps, InternalGridColumnProps, ColumnGroupSize } from './Column';
+import { Column, GridColumnProps, InternalGridColumnProps, ColumnBreakpointSize } from './Column';
 import { StyledGridContainer } from './Grid.styled';
 import { getSizes, getSizesAsArray } from './Util';
 import { GridProps } from './types';
 
 export const Grid: FC<GridProps> & { Col: FC<GridColumnProps> } = ({ gutter, children }) => {
   // Calculate all the children's sizes in an array
-  const sizes = [] as ColumnGroupSize[];
+  const sizes = [] as ColumnBreakpointSize[];
   Children.forEach<any>(children, (child: ReactElement<GridColumnProps>) => {
     if (isElementTypeOf(Column, child)) {
       const currentSize = getSizes(child.props);

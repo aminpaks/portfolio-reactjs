@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 
-export type ColumnSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | null;
-export interface ColumnGroupSize {
+export type ColumnSize = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | null;
+export interface ColumnBreakpointSize {
   xs?: ColumnSize;
   sm?: ColumnSize;
   md?: ColumnSize;
@@ -10,11 +10,12 @@ export interface ColumnGroupSize {
   xxl?: ColumnSize;
   size?: ColumnSize;
 }
-export interface GridColumnProps extends ColumnGroupSize {
+export type BreakpointGroupSize = { [breakpoint: string]: Array<number | null> };
+export interface GridColumnProps extends ColumnBreakpointSize {
   style?: CSSProperties;
 }
 export interface InternalGridColumnProps {
-  size: ColumnGroupSize;
-  allColumnSizes: { [breakpoint: string]: Array<number | null> };
+  size: ColumnBreakpointSize;
+  allColumnSizes: BreakpointGroupSize;
   style?: CSSProperties;
 }

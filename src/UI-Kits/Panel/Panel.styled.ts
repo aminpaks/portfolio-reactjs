@@ -7,7 +7,7 @@ export const StyledPanel = styled(PanelComponent)`
   padding: ${getPaddingValue};
   overflow: hidden;
   border-radius: 0.5em;
-  box-shadow: 0 0 1.9em ${props => fade(props.theme.colorSet.text, 0.18)};
+  box-shadow: 0 0 1em ${props => fade(props.theme.colorSet.text, 0.18)};
   background-color: #fff;
 
   ${buildVariants};

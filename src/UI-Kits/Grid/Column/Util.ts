@@ -1,6 +1,7 @@
-import { ViewBreakpoints, ViewBreakpoint } from 'src/Theme';
+import memoize from 'fast-memoize';
+import { ViewBreakpoints, ViewBreakpoint, getPerceivedBrightness } from 'src/Theme';
 
-import { InternalGridColumnProps, ColumnGroupSize } from './types';
+import { InternalGridColumnProps, ColumnBreakpointSize, BreakpointGroupSize } from './types';
 
 export const getPotentialSize = (allColumnSizes: (number | null)[]) => {
   const totalSize = allColumnSizes.reduce<number>((res, s) => res + (s || 0), 0);
@@ -11,7 +12,7 @@ export const getPotentialSize = (allColumnSizes: (number | null)[]) => {
 
 const breakpointFromSmallToLarge: Array<ViewBreakpoint> = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 
-export const getMinimumSize = (breakpoint: ViewBreakpoint, groupSizes: ColumnGroupSize) => {
+export const getMinimumSize = (breakpoint: ViewBreakpoint, groupSizes: ColumnBreakpointSize) => {
   const potentialSize = groupSizes[breakpoint];
 
   // Returns null if sizes or default size is not available
@@ -29,16 +30,38 @@ export const getMinimumSize = (breakpoint: ViewBreakpoint, groupSizes: ColumnGro
     size => size[1] != null && breakpointFromSmallToLarge.indexOf(size[0]) <= breakpointIndex,
   ) || ['xs'];
 
-  return groupSizes[adjustedSize[0]] || groupSizes.size || null;
+  if (groupSizes[adjustedSize[0]] != null) {
+    return groupSizes[adjustedSize[0]];
+  } else if (groupSizes.size != null) {
+    return groupSizes.size;
+  }
+  return null;
 };
+
+const getPercentage = (
+  breakpoint: ViewBreakpoint,
+  potentialSize: ColumnBreakpointSize,
+  breakpointSizes: BreakpointGroupSize,
+) => {
+  const potentialSizeForBreakpoint =
+    breakpoint != null && potentialSize != null ? getMinimumSize(breakpoint, potentialSize) : null;
+  const size =
+    potentialSizeForBreakpoint == null ? getPotentialSize(breakpointSizes[breakpoint]) : potentialSizeForBreakpoint;
+  const percentage = (100 / 12) * size;
+  return Number.isNaN(percentage) ? 0 : percentage;
+};
+
+const mGetPercentage = memoize(getPercentage);
 
 export const getSizeValue = (breakpoint: keyof ViewBreakpoints) => ({
   size: potentialSize,
-  allColumnSizes: sizes,
+  allColumnSizes,
 }: InternalGridColumnProps) => {
-  const potentialSizeForBreakpoint =
-    breakpoint != null && potentialSize != null ? getMinimumSize(breakpoint, potentialSize) : null;
-  const size = potentialSizeForBreakpoint == null ? getPotentialSize(sizes[breakpoint]) : potentialSizeForBreakpoint;
-  const percentage = (100 / 12) * size;
-  return percentage <= 0 ? 'auto' : `${percentage.toFixed(2).replace(/\.00$/, '')}%`;
+  const percentage = mGetPercentage(breakpoint, potentialSize, allColumnSizes);
+  return percentage <= 0 ? '0' : `${percentage.toFixed(2).replace(/\.00$/, '')}%`;
+};
+
+export const getDisplayValue = (breakpoint: ViewBreakpoint) => ({ size, allColumnSizes }: InternalGridColumnProps) => {
+  const percentage = mGetPercentage(breakpoint, size, allColumnSizes);
+  return percentage <= 0 ? 'none' : 'block';
 };

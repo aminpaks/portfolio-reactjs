@@ -18,15 +18,15 @@ exports[`Grid should render Grid with Columns 1`] = `
 }
 
 .c3 {
-  display: block;
+  display: none;
   box-sizing: border-box;
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  -webkit-flex-basis: auto;
-  -ms-flex-preferred-size: auto;
-  flex-basis: auto;
-  max-width: auto;
+  -webkit-flex-basis: 0;
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  max-width: 0;
 }
 
 .c3:last-of-type {
@@ -59,6 +59,7 @@ exports[`Grid should render Grid with Columns 1`] = `
 
 @media (min-width:576px) {
   .c2 {
+    display: block;
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
@@ -68,6 +69,7 @@ exports[`Grid should render Grid with Columns 1`] = `
 
 @media (min-width:768px) {
   .c2 {
+    display: block;
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
@@ -77,6 +79,7 @@ exports[`Grid should render Grid with Columns 1`] = `
 
 @media (min-width:992px) {
   .c2 {
+    display: block;
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
@@ -86,6 +89,7 @@ exports[`Grid should render Grid with Columns 1`] = `
 
 @media (min-width:1200px) {
   .c2 {
+    display: block;
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
@@ -95,15 +99,17 @@ exports[`Grid should render Grid with Columns 1`] = `
 
 @media (min-width:576px) {
   .c3 {
-    -webkit-flex-basis: NaN%;
-    -ms-flex-preferred-size: NaN%;
-    flex-basis: NaN%;
-    max-width: NaN%;
+    display: none;
+    -webkit-flex-basis: 0;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    max-width: 0;
   }
 }
 
 @media (min-width:768px) {
   .c3 {
+    display: block;
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
@@ -113,6 +119,7 @@ exports[`Grid should render Grid with Columns 1`] = `
 
 @media (min-width:992px) {
   .c3 {
+    display: block;
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;
@@ -122,6 +129,7 @@ exports[`Grid should render Grid with Columns 1`] = `
 
 @media (min-width:1200px) {
   .c3 {
+    display: block;
     -webkit-flex-basis: 25%;
     -ms-flex-preferred-size: 25%;
     flex-basis: 25%;

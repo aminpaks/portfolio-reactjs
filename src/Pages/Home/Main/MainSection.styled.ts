@@ -1,4 +1,4 @@
-import styled from 'src/Theme';
+import styled, { getBreakpoint } from 'src/Theme';
 
 export const StyledDevelopment = styled.div`
   .main-section {
@@ -24,8 +24,12 @@ export const StyledDevelopment = styled.div`
         display: block;
       }
       b {
-        font-size: 4.5rem;
+        font-size: 10vw;
         letter-spacing: -0.3rem;
+
+        @media (min-width: ${getBreakpoint('md')}) {
+          font-size: 4.5rem;
+        }
 
         &::before {
           margin-left: -2.143rem;
@@ -34,10 +38,14 @@ export const StyledDevelopment = styled.div`
         }
       }
       span {
-        font-size: 3.6rem;
+        font-size: 8vw;
         font-weight: 300;
         margin-left: 1.4rem;
         letter-spacing: 0.1rem;
+
+        @media (min-width: ${getBreakpoint('md')}) {
+          font-size: 3.6rem;
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 import { isDev } from 'src/Utils';
-import { PropertySide, WithThemeProps, CSSShorthandProperty, TokenType, TokenValue } from '../types';
+import { PropertySide, WithThemeProps, CSSShorthandProperty, TokenType, TokenValue, ViewBreakpoint } from '../types';
 
 const parseCSSValue = (input: string) => {
   const [, potentialValue, potentialUnit] = /(\d+(?:\.\d+)?)(\w+)?/i.exec(input) || [undefined, '0', 'em'];
@@ -101,4 +101,18 @@ export const getNormalizedTokenValue = <T, TokenKey extends string>({
     }
   }
   return null;
+};
+
+export const getBreakpoint = <T>(breakpoint: ViewBreakpoint, normalizer?: (value: number) => number) => ({
+  theme: { breakpoints },
+}: WithThemeProps<T>) => {
+  let value = breakpoints[breakpoint];
+
+  if (typeof normalizer === 'function') {
+    value = normalizer(value);
+    if (isDev() && value != null) {
+      throw new Error('Normalizer returned undefined value, did you forgot to return a value?');
+    }
+  }
+  return value + 'px';
 };
