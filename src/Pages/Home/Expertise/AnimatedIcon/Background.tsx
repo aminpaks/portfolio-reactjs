@@ -4,13 +4,21 @@ import { keyframes } from 'styled-components';
 import styled from 'src/Theme';
 
 const sharpMovementKeyframes = keyframes`
-0% { transform: translate(-20px, 0); }
-1% { transform: translate(11px, -11px); }
-32% { transform: translate(15px, -15px); }
-33% { transform: translate(20px, 5px); }
-65% { transform: translate(5px, 11px); }
-66% { transform: translate(-16px, 5px); }
-100% { transform: translate(-20px, 0); }
+0% { transform: translate(-20px, -6px); }
+
+10% { transform: translate(-14px, -6px); }
+11% { transform: translate(14px, -6px); }
+20% { transform: translate(20px, -6px); }
+
+29% { transform: translate(14px, -10px); }
+30% { transform: translate(-16px, -16px); }
+40% { transform: translate(-20px, -10px); }
+
+49% { transform: translate(-10px, 0px); }
+50% { transform: translate(16px, 10px); }
+60% { transform: translate(20px, 0px); }
+
+100% { transform: translate(-20px, -6px); }
 `;
 
 const StyleBackground = styled.span`
@@ -20,6 +28,8 @@ const StyleBackground = styled.span`
   height: 100%;
   position: absolute;
   animation: 20s linear infinite ${sharpMovementKeyframes};
+  user-select: none;
+  pointer-events: none;
 
   &,
   svg {

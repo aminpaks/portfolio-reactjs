@@ -1,4 +1,4 @@
-import React, { FC, ComponentType, useContext, CSSProperties } from 'react';
+import React, { FC, ComponentType, useContext } from 'react';
 
 import { ThemeContext, mixWith } from 'src/Theme';
 import { Background } from './Background';
