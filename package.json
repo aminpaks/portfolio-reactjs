@@ -6,6 +6,7 @@
   "dependencies": {
     "color": "3.1.0",
     "fast-memoize": "^2.5.1",
+    "invariant": "^2.2.4",
     "react": "16.8.1",
     "react-dom": "16.8.1",
     "react-router-dom": "4.3.1",

@@ -24,6 +24,8 @@ export interface ViewBreakpoints {
   xxl: number;
 }
 
+export type ViewBreakpointSetting = 'min-width' | 'max-width';
+
 export type ViewBreakpoint = keyof ViewBreakpoints;
 
 export type PropertySide = 'top' | 'right' | 'bottom' | 'left';
