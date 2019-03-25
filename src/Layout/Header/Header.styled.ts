@@ -11,7 +11,7 @@ export const StyledHeader = styled.nav`
   right: 0;
   display: block;
   position: fixed;
-  z-index: 1000;
+  z-index: 1010;
 
   @media screen and (min-width: ${getBreakpoint('xxl')}) {
     left: 6%;
@@ -38,6 +38,7 @@ export const StyledHeader = styled.nav`
       }
 
       > div {
+        display: flex;
         padding-top: 1.857em;
         padding-bottom: 1.857em;
 
@@ -80,6 +81,17 @@ export const StyledNavLinksContainer = styled.div`
     padding: 0 0.6em;
     display: block;
     position: relative;
+    font-weight: 700;
+    text-decoration: none;
+    outline: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus {
+      outline: initial;
+    }
 
     &:not(:first-child) {
       margin-left: calc(1em + ${navLinksSeparatorWidth});
@@ -95,9 +107,11 @@ export const StyledNavLinksContainer = styled.div`
         height: 60%;
         display: block;
         position: absolute;
-        transform: translateY(-36%);
+        transform: translateY(-40%);
         content: '';
         background-color: #ddd;
+        user-select: none;
+        pointer-events: none;
       }
     }
   }

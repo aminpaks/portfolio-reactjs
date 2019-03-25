@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-
 import { Section } from 'src/UI-Kits';
 
 export const Footer: FC = () => (

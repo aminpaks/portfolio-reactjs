@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 
-import { Header } from 'src/Header';
-import { Footer } from 'src/Footer';
+import { Footer } from './Footer';
+import { Header } from './Header';
 import { StyledContainer } from './Main.styled';
 
-export const MainLayout: FC<{}> = ({ children }) => (
+export const MainLayout: FC = ({ children }) => (
   <StyledContainer>
-    <Header logo={null} />
+    <Header />
     {children}
     <Footer />
   </StyledContainer>
