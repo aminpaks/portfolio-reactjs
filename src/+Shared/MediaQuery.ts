@@ -13,7 +13,7 @@ const useGetBreakpointQuery = (query: MQuery) => {
   return `(${query[1]}: ${breakpoint}px)`;
 };
 
-const useQueryMediaList = (query: MQuery) => {
+const useMediaQueryList = (query: MQuery) => {
   // Media query as string
   const queryAsString = useGetBreakpointQuery(query);
 
@@ -40,7 +40,7 @@ const useQueryMediaList = (query: MQuery) => {
 };
 
 export const MediaQuery: FC<MediaQueryProps> = ({ queries, children, render }) => {
-  const queryResults = queries.map(query => useQueryMediaList(query));
+  const queryResults = queries.map(query => useMediaQueryList(query));
 
   if (typeof render === 'function') {
     return render(queryResults);

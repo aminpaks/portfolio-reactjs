@@ -37,7 +37,7 @@ export const HomeAboutSection: FC = () => {
       <Spacing margin={['sm', 'auto', 'auto']}>
         <Typography variant="body" style={{ maxWidth: '48em' }}>
           In my opinion <mark>React</mark> has adopted reactive programming with a different approach and quite honestly
-          not many developers realize this fact.
+          it might not be obvious but the end result is pretty great!
         </Typography>
       </Spacing>
     </Section>
