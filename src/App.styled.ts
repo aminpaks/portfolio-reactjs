@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
     display: flex;
     flex: 1 0 100%;
     flex-direction: column;
+    overflow: auto;
     min-height: 100%;
   }
   body {
@@ -59,15 +60,4 @@ export const StyledContainer = styled.div`
 export const StyledLogo = styled.img`
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
-`;
-
-export const StyledHeader = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 `;

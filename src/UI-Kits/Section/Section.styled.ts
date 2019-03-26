@@ -5,6 +5,7 @@ import { SectionProps } from './Section';
 import { setBackground, setColor, setPaddingValue, setWidthValue, getMarginValue, setRootBox } from './Utils';
 
 export const StyledSection = styled.section<SectionProps>`
+  position: relative;
   ${setRootBox};
 
   > div {
