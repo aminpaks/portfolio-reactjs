@@ -1,18 +1,16 @@
-import styled from 'src/Theme';
-import { mediaQuery } from 'src/Device';
+import styled, { getBreakpoint, useGetBreakpointWidth } from 'src/Theme';
 
 import { SectionProps } from './Section';
 import { setBackground, setColor, setPaddingValue, setWidthValue, getMarginValue, setRootBox } from './Utils';
 
 export const StyledSection = styled.section<SectionProps>`
-  position: relative;
   ${setRootBox};
 
   > div {
     position: relative;
     padding-top: 2em;
     padding-bottom: 3em;
-    ${mediaQuery.desktopMin} {
+    @media (min-width: ${getBreakpoint('xl')}) {
       padding-top: 6em;
       padding-bottom: 7.8em;
     }

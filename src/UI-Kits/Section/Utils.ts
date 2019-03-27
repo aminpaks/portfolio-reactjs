@@ -20,7 +20,7 @@ export const setWidthValue = ({ variant = 'default', theme: { breakpoints } }: W
     case 'right-round':
     case 'default':
       return `
-@media screen and (min-width: ${breakpoints.lg}px) { width: calc(${breakpoints.lg}px - 2.4rem); }
+@media screen and (min-width: ${breakpoints.lg}px) { width: calc(${breakpoints.lg}px - 4.8rem); }
 @media screen and (min-width: ${breakpoints.xl}px) { width: calc(${breakpoints.xl}px - 4.8rem); }
 @media screen and (min-width: ${breakpoints.xxl}px) { width: calc(${breakpoints.xl}px - 4.8rem); }
       `;
@@ -57,7 +57,7 @@ export const setPaddingValue = ({ variant = 'default', theme: { breakpoints } }:
 padding-left: 1.2rem;
 padding-right: 1.2rem;
 
-@media screen and (min-width: ${breakpoints.xl}px) {
+@media (min-width: ${breakpoints.md}px) {
   padding-left: 2.4rem;
   padding-right: 2.4rem;
 }

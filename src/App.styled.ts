@@ -11,7 +11,6 @@ export const GlobalStyles = createGlobalStyle<ThemeProps>`
     display: flex;
     flex: 1 0 100%;
     flex-direction: column;
-    overflow: auto;
     min-height: 100%;
   }
   body {

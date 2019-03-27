@@ -1,9 +1,6 @@
-import styled, { whiten, WithThemeProps, ThemeProps, ViewBreakpoints } from 'src/Theme';
+import styled, { whiten, getBreakpoint } from 'src/Theme';
 
 const navLinksSeparatorWidth = '1px';
-
-const getBreakpoint = (breakpoint: keyof ViewBreakpoints, normalize = 1) => (props: ThemeProps) =>
-  props.theme.breakpoints[breakpoint] * normalize + 'px';
 
 export const StyledHeader = styled.nav`
   top: 0;
@@ -45,7 +42,7 @@ export const StyledHeader = styled.nav`
         padding-left: 1.2rem;
         padding-right: 1.2rem;
 
-        @media screen and (min-width: ${getBreakpoint('lg')}) {
+        @media screen and (min-width: ${getBreakpoint('md')}) {
           width: calc(${getBreakpoint('lg')} - 4.8rem);
           margin-left: auto;
           margin-right: auto;

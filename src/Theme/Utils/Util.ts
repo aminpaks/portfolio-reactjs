@@ -1,3 +1,4 @@
+import invariant from 'invariant';
 import { isDev } from 'src/Utils';
 import { PropertySide, WithThemeProps, CSSShorthandProperty, TokenType, TokenValue, ViewBreakpoint } from '../types';
 
@@ -110,9 +111,7 @@ export const getBreakpoint = <T>(breakpoint: ViewBreakpoint, normalizer?: (value
 
   if (typeof normalizer === 'function') {
     value = normalizer(value);
-    if (isDev() && value != null) {
-      throw new Error('Normalizer returned undefined value, did you forgot to return a value?');
-    }
+    invariant(value != null, 'Normalizer returned undefined value, did you forgot to return a value?');
   }
   return value + 'px';
 };

@@ -1,8 +1,7 @@
-import styled, { whiten, darken } from 'src/Theme';
-import { mediaQuery } from 'src/Device';
+import styled, { whiten, darken, getBreakpoint } from 'src/Theme';
 
 export const StyledTabButton = styled.li<{ isActive: boolean }>`
-  ${mediaQuery.tabletPortraitMin} {
+  @media (min-width: ${getBreakpoint('sm')}) {
     display: inline-block;
 
     &:not(:last-of-type) {
@@ -18,10 +17,7 @@ export const StyledTabButton = styled.li<{ isActive: boolean }>`
     font-size: 1.1rem;
     position: relative;
     padding: 0.85em 0.1em 0.73em;
-    color: ${props =>
-      props.isActive
-        ? whiten(props.theme.colorSet.text, 0.8)
-        : whiten(props.theme.colorSet.text, 4)};
+    color: ${props => (props.isActive ? whiten(props.theme.colorSet.text, 0.8) : whiten(props.theme.colorSet.text, 4))};
     transition: 180ms ease-in-out;
     cursor: ${props => (props.isActive ? 'default' : 'pointer')};
 
@@ -29,7 +25,7 @@ export const StyledTabButton = styled.li<{ isActive: boolean }>`
       color: ${props => (props.isActive ? null : props.theme.colorSet.primary)};
     }
 
-    ${mediaQuery.tabletPortraitMin} {
+    @media (min-width: ${getBreakpoint('sm')}) {
       font-size: 1.38rem;
 
       &::after {
@@ -52,7 +48,7 @@ export const StyledTabButton = styled.li<{ isActive: boolean }>`
         width: 100%;
       }
     }
-    ${mediaQuery.tabletPortraitMax} {
+    @media (max-width: ${getBreakpoint('sm', w => w - 1)}) {
       &.active {
         color: #fff;
         background-color: ${props => darken(props.theme.colorSet.primary, 0.1)};
