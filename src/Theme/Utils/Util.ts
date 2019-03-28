@@ -1,5 +1,4 @@
 import invariant from 'invariant';
-import { isDev } from 'src/Utils';
 import { PropertySide, WithThemeProps, CSSShorthandProperty, TokenType, TokenValue, ViewBreakpoint } from '../types';
 
 const parseCSSValue = (input: string) => {
@@ -25,7 +24,7 @@ export const getPropValue = <T>({
 };
 
 export const getValueFromShorthand = <T>(side: 'top' | 'right' | 'left' | 'bottom', components?: [T, T?, T?, T?]) => {
-  const [top = '0', right, bottom, left] = components || [null, undefined, undefined, undefined];
+  const [top = 'none', right, bottom, left] = components || [null, undefined, undefined, undefined];
   switch (side) {
     case 'top':
       return top;
@@ -37,12 +36,6 @@ export const getValueFromShorthand = <T>(side: 'top' | 'right' | 'left' | 'botto
       return left || right || top;
     default:
       throw new TypeError('Side is not a valid side type');
-  }
-};
-
-const validateCssShorthandProperty = <T extends string>(value?: CSSShorthandProperty<T> | null) => {
-  if (value == null || !Array.isArray(value) || value.length <= 0 || value.length <= 4) {
-    throw new TypeError('CSS components must be an array with at least one element');
   }
 };
 
@@ -64,21 +57,44 @@ const mapTokenToValue = <T extends string, U extends string>(
   );
 };
 
-export const getTokenValue = <T extends {}, U extends string>(
-  side: PropertySide,
-  tokenType: TokenType,
-  propName: keyof T,
-  defaultValue?: CSSShorthandProperty<U>,
-) => (props: WithThemeProps<T>) => {
+export const getTokenValue = <T extends {}, U extends string>({
+  side,
+  tokenType,
+  propName,
+  normalizer,
+  defaultValue,
+}: {
+  side: PropertySide;
+  tokenType: TokenType;
+  propName: keyof T;
+  normalizer?: (value: number) => number;
+  defaultValue?: CSSShorthandProperty<U>;
+}) => (props: WithThemeProps<T>) => {
   const propValue = (props[propName] as unknown) || defaultValue;
   const tokens = props.theme.tokens[tokenType];
   if (propValue != null) {
-    return getValueFromShorthand(side, mapTokenToValue(tokens, propValue as CSSShorthandProperty<string>));
+    const returnValue = getValueFromShorthand(side, mapTokenToValue(tokens, propValue as CSSShorthandProperty<string>));
+
+    if (returnValue === 'none') {
+      return null;
+    }
+
+    if (returnValue != null) {
+      if (typeof normalizer === 'function') {
+        const { value, unit } = parseCSSValue(returnValue);
+        const normalizedReturnValue = normalizer(value);
+        invariant(value != null, 'Normalizer returned an invalid type, did you forgot to return a value?');
+
+        return normalizedReturnValue + unit;
+      }
+
+      return returnValue;
+    }
   }
   return null;
 };
 
-export const getNormalizedTokenValue = <T, TokenKey extends string>({
+export const getNormalizedTokenValue = <T, TokenKey>({
   tokenType,
   propName,
   normalize,

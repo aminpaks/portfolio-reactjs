@@ -7,15 +7,45 @@ import { StyledButton } from '../Button.styled';
 const defaultSpacingValue: CSSShorthandProperty<SpacingToken> = ['xs'];
 
 export const StyledButtonGroup = styled.div<ButtonGroupProps>`
+  margin-left: ${getTokenValue({
+    side: 'left',
+    tokenType: 'spacing',
+    propName: 'spacing',
+    defaultValue: defaultSpacingValue,
+    normalizer: v => v * -1,
+  })};
+  margin-right: ${getTokenValue({
+    side: 'right',
+    tokenType: 'spacing',
+    propName: 'spacing',
+    defaultValue: defaultSpacingValue,
+    normalizer: v => v * -1,
+  })};
   ${StyledButton} {
-    margin-top: ${getTokenValue('top', 'spacing', 'spacing', defaultSpacingValue)};
-    margin-bottom: ${getTokenValue('bottom', 'spacing', 'spacing', defaultSpacingValue)};
-    &:not(:first-of-type) {
-      margin-left: ${getTokenValue('left', 'spacing', 'spacing', defaultSpacingValue)};
-    }
-    &:not(:last-of-type) {
-      margin-right: ${getTokenValue('right', 'spacing', 'spacing', defaultSpacingValue)};
-    }
+    margin-top: ${getTokenValue({
+      side: 'top',
+      tokenType: 'spacing',
+      propName: 'spacing',
+      defaultValue: defaultSpacingValue,
+    })};
+    margin-right: ${getTokenValue({
+      side: 'right',
+      tokenType: 'spacing',
+      propName: 'spacing',
+      defaultValue: defaultSpacingValue,
+    })};
+    margin-bottom: ${getTokenValue({
+      side: 'bottom',
+      tokenType: 'spacing',
+      propName: 'spacing',
+      defaultValue: defaultSpacingValue,
+    })};
+    margin-left: ${getTokenValue({
+      side: 'left',
+      tokenType: 'spacing',
+      propName: 'spacing',
+      defaultValue: defaultSpacingValue,
+    })};
   }
 `;
 

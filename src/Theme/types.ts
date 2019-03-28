@@ -30,7 +30,7 @@ export type ViewBreakpoint = keyof ViewBreakpoints;
 
 export type PropertySide = 'top' | 'right' | 'bottom' | 'left';
 
-export type SpacingToken = ViewBreakpoint | 'auto' | '0';
+export type SpacingToken = ViewBreakpoint | 'auto' | 'none' | '0';
 
 export type CSSShorthandProperty<T extends string> = [T, T?, T?, T?];
 

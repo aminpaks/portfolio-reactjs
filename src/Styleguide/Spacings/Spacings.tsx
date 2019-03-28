@@ -4,6 +4,8 @@ import { HeadTitle } from 'src/+Shared';
 import { getRandomColor, getForegroundColor } from 'src/Theme';
 import { Section, Typography, Spacing } from 'src/UI-Kits';
 
+const Wrap: FC = ({ children }) => <div style={{ border: '1px solid silver', marginTop: '2em' }}>{children}</div>;
+
 const getStyle = () => {
   const backgroundColor = getRandomColor();
   const color = getForegroundColor(backgroundColor);
@@ -22,25 +24,43 @@ export const Spacings: FC = () => (
     <HeadTitle title="Spacing" suffix="Styleguide" />
 
     <Section>
-      <Spacing margin={['md']}>
-        <Typography variant="headline" text="Medium Margin Spacing" />
-      </Spacing>
+      <Wrap>
+        <Spacing margin={['md']}>
+          <Typography variant="headline" text="Medium Margin Spacing" />
+        </Spacing>
+      </Wrap>
       <code>
         <pre>{`<Spacing margin={['md']}>
   <Typography variant="headline" text="Medium Margin Spacing" />
 </Spacing>`}</pre>
       </code>
-      <Spacing margin={['md', '0']}>
-        <Typography variant="body">Margin Spacing - top: medium, right: 0, bottom: medium, left: 0</Typography>
-      </Spacing>
+      <Wrap>
+        <Spacing margin={['md', '0']}>
+          <Typography variant="body">Margin Spacing - top: medium, right: 0, bottom: medium, left: 0</Typography>
+        </Spacing>
+      </Wrap>
       <code>
         <pre>{`<Spacing margin={['md', '0']}>
   <Typography variant="body">Margin Spacing - top: medium, right: 0, bottom: medium, left: 0</Typography>
 </Spacing>`}</pre>
       </code>
-      <Spacing padding={['xl', '0', 'md']}>
-        <Typography variant="body">Padding Spacing - top: extra large, right: 0, bottom: medium, left: 0</Typography>
-      </Spacing>
+      <Wrap>
+        <Spacing margin={['none', 'lg', 'xs']}>
+          <Typography variant="body">
+            Margin Spacing - top: nothing, right: large, bottom: extra small, left: large
+          </Typography>
+        </Spacing>
+      </Wrap>
+      <code>
+        <pre>{`<Spacing margin={['none', 'lg', 'xs']}>
+  <Typography variant="body">Margin Spacing - top: nothing, right: large, bottom: extra small, left: large</Typography>
+</Spacing>`}</pre>
+      </code>
+      <Wrap>
+        <Spacing padding={['xl', '0', 'md']}>
+          <Typography variant="body">Padding Spacing - top: extra large, right: 0, bottom: medium, left: 0</Typography>
+        </Spacing>
+      </Wrap>
       <code>
         <pre>{`<Spacing padding={['xl', '0', 'md']}>
   <Typography variant="body">Padding Spacing - top: extra large, right: 0, bottom: medium, left: 0</Typography>
